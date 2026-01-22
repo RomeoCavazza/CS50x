@@ -1,0 +1,23 @@
+# Exécutables compilés
+**/hello
+**/mario
+**/cash
+**/credit
+**/readability
+**/scrabble
+
+# Environnement virtuel Python
+.venv/
+__pycache__/
+*.pyc
+
+# Fichiers temporaires
+*.o
+*.a
+*.so
+*.dylib
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
