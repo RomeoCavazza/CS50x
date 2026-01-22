@@ -1,10 +1,14 @@
 # Exécutables compilés
-**/hello
-**/mario
-**/cash
-**/credit
-**/readability
-**/scrabble
+**/me/hello
+**/world/hello
+**/mario-less/mario
+**/mario-more/mario
+**/cash/cash
+**/credit/credit
+**/readability/readability
+**/scrabble/scrabble
+**/caesar/caesar
+**/substitution/substitution
 
 # Environnement virtuel Python
 .venv/
@@ -20,4 +24,3 @@ __pycache__/
 # Fichiers système
 .DS_Store
 Thumbs.db
-

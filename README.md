@@ -8,14 +8,18 @@ Ce dépôt contient mes solutions pour le cours CS50 de Harvard.
 cs50/
 ├── Makefile          # Configuration de compilation pour tous les exercices
 ├── .venv/            # Environnement Python virtuel (check50, style50, submit50)
-├── libcs50/          # Bibliothèque CS50 locale (source)
-└── Week 1 — C/       # Exercices de la semaine 1 (C)
-    ├── world/        # Hello, World
-    ├── me/           # Hello (avec nom utilisateur)
-    ├── mario-less/   # Pyramide Mario (simple)
-    ├── mario-more/   # Pyramides Mario (double)
-    ├── cash/         # Algorithme glouton pour la monnaie
-    └── credit/       # Validation de carte de crédit (algorithme de Luhn)
+├── Week 1 — C/       # Exercices de la semaine 1 (C)
+│   ├── world/        # Hello, World
+│   ├── me/           # Hello (avec nom utilisateur)
+│   ├── mario-less/   # Pyramide Mario (simple)
+│   ├── mario-more/   # Pyramides Mario (double)
+│   ├── cash/         # Algorithme glouton pour la monnaie
+│   └── credit/       # Validation de carte de crédit (algorithme de Luhn)
+└── Week 2 — Arrays/  # Exercices de la semaine 2 (Arrays, Strings)
+    ├── readability/  # Indice de lecture Coleman-Liau
+    ├── scrabble/     # Calcul de score Scrabble
+    ├── caesar/       # Chiffrement de César
+    └── substitution/ # Chiffrement par substitution
 ```
 
 ## Prérequis
@@ -40,25 +44,41 @@ Les outils CS50 sont installés dans un environnement Python virtuel (`.venv/`) 
 Depuis la racine du projet :
 
 ```bash
-# Compiler un exercice spécifique
+# Week 1 — C
 make "Week 1 — C/world/hello"
 make "Week 1 — C/me/hello"
 make "Week 1 — C/mario-less/mario"
+make "Week 1 — C/mario-more/mario"
 make "Week 1 — C/cash/cash"
 make "Week 1 — C/credit/credit"
+
+# Week 2 — Arrays
+make "Week 2 — Arrays/readability/readability"
+make "Week 2 — Arrays/scrabble/scrabble"
+make "Week 2 — Arrays/caesar/caesar"
+make "Week 2 — Arrays/substitution/substitution"
 
 # Nettoyer les exécutables
 make clean
 ```
 
-**Note** : Les guillemets sont nécessaires à cause des espaces dans "Week 1 — C".
+**Note** : Les guillemets sont nécessaires à cause des espaces dans les noms de dossiers.
 
 ### Exécution
 
 ```bash
+# Week 1
 ./"Week 1 — C/world/hello"
 ./"Week 1 — C/me/hello"
 ./"Week 1 — C/mario-less/mario"
+./"Week 1 — C/cash/cash"
+./"Week 1 — C/credit/credit"
+
+# Week 2 (caesar et substitution nécessitent un argument en ligne de commande)
+./"Week 2 — Arrays/readability/readability"
+./"Week 2 — Arrays/scrabble/scrabble"
+./"Week 2 — Arrays/caesar/caesar" 13
+./"Week 2 — Arrays/substitution/substitution" NQXPOMAFTRHLZGECYJIUWSKDVB
 ```
 
 ### Vérification avec check50
@@ -67,39 +87,28 @@ make clean
 # Activer l'environnement virtuel
 source .venv/bin/activate
 
-# Vérifier un exercice (depuis le dossier de l'exercice)
-cd "Week 1 — C/world"
-../.venv/bin/check50 cs50/problems/2026/x/world
+# Week 1 — C (depuis le dossier de l'exercice)
+cd "Week 1 — C/world" && check50 cs50/problems/2026/x/world
+cd "Week 1 — C/me" && check50 cs50/problems/2026/x/me
+cd "Week 1 — C/mario-less" && check50 cs50/problems/2026/x/mario/less
+cd "Week 1 — C/mario-more" && check50 cs50/problems/2026/x/mario/more
+cd "Week 1 — C/cash" && check50 cs50/problems/2026/x/cash
+cd "Week 1 — C/credit" && check50 cs50/problems/2026/x/credit
 
-cd "../me"
-../.venv/bin/check50 cs50/problems/2026/x/me
-
-cd "../mario-less"
-../.venv/bin/check50 cs50/problems/2026/x/mario/less
-
-cd "../mario-more"
-../.venv/bin/check50 cs50/problems/2026/x/mario/more
-
-cd "../cash"
-../.venv/bin/check50 cs50/problems/2026/x/cash
-
-cd "../credit"
-../.venv/bin/check50 cs50/problems/2026/x/credit
+# Week 2 — Arrays (depuis la racine du projet)
+cd "Week 2 — Arrays/readability" && check50 cs50/problems/2026/x/readability
+cd "Week 2 — Arrays/scrabble" && check50 cs50/problems/2026/x/scrabble
+cd "Week 2 — Arrays/caesar" && check50 cs50/problems/2026/x/caesar
+cd "Week 2 — Arrays/substitution" && check50 cs50/problems/2026/x/substitution
 ```
 
 ### Soumission avec submit50
 
 ```bash
-# Activer l'environnement virtuel
 source .venv/bin/activate
 
-# Soumettre un exercice (depuis le dossier de l'exercice)
-cd "Week 1 — C/world"
-../.venv/bin/submit50 cs50/problems/2026/x/world
-
-cd "../me"
-../.venv/bin/submit50 cs50/problems/2026/x/me
-
+# Même structure que check50, en remplaçant check50 par submit50
+cd "Week 1 — C/world" && submit50 cs50/problems/2026/x/world
 # etc.
 ```
 
@@ -107,14 +116,14 @@ cd "../me"
 
 Le Makefile à la racine configure automatiquement :
 - Les chemins d'inclusion pour `cs50.h` (`-I$(HOME)/.local/include`)
-- Le linkage avec la bibliothèque CS50 (`-lcs50`)
+- Le linkage avec la bibliothèque CS50 (`-lcs50`) et math (`-lm` pour `readability`)
 - Le rpath pour trouver la bibliothèque à l'exécution
 
 ### Variables principales
 
 - `CC` : Compilateur (cc)
 - `CFLAGS` : Flags de compilation (-Wall -Wextra -std=c11)
-- `LDFLAGS` : Flags de linkage avec CS50
+- `LDFLAGS` : Flags de linkage avec CS50 et math
 - `CHECK50` : Chemin vers check50 dans le venv
 - `SUBMIT50` : Chemin vers submit50 dans le venv
 
@@ -145,6 +154,30 @@ Le Makefile à la racine configure automatiquement :
 **Credit** - Valide un numéro de carte de crédit et détermine son type
 - Implémente l'algorithme de Luhn pour la validation
 - Détecte American Express, MasterCard, ou Visa
+
+### Week 2 — Arrays
+
+#### readability
+**Readability** - Calcule le niveau de lecture d'un texte avec l'indice Coleman-Liau
+- Compte lettres, mots et phrases
+- Affiche "Before Grade 1", "Grade X" ou "Grade 16+"
+
+#### scrabble
+**Scrabble** - Compare les scores de deux mots selon les points Scrabble
+- Lettres non-alphabétiques ignorées
+- Affiche "Player 1 wins!", "Player 2 wins!" ou "Tie!"
+
+#### caesar
+**Caesar** - Chiffrement de César (décalage de k positions)
+- Argument : clé entière positive
+- Préserve la casse et les caractères non-alphabétiques
+- Usage : `./caesar key`
+
+#### substitution
+**Substitution** - Chiffrement par substitution (clé de 26 lettres)
+- Argument : clé de 26 caractères, chaque lettre une seule fois
+- Préserve la casse, insensible à la casse pour la clé
+- Usage : `./substitution key`
 
 ## Notes techniques
 
