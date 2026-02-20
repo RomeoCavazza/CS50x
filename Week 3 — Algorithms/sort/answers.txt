@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: sort1 is very fast on already sorted data (0.005s) but very slow on random data (3.9s) and reversed data (2.4s). This is typical behavior for bubble sort, which has a best case of Ω(n) when the list is already sorted, but O(n²) otherwise.
+
+sort2 uses: Merge Sort
+
+How do you know?: sort2 is extremely fast in all cases (~0.01s), whether the data is random, sorted, or reversed. This is the behavior of merge sort, which is always O(n log n) regardless of the initial order of the data.
+
+sort3 uses: Selection Sort
+
+How do you know?: sort3 takes about the same time (~0.8s) regardless of whether the data is random, sorted, or reversed. This is the behavior of the selection sort, which always performs O(n²) comparisons, even on an already sorted list, because it always scans the rest of the array to find the minimum.
