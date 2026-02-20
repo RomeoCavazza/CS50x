@@ -15,11 +15,24 @@ cs50/
 │   ├── mario-more/   # Pyramides Mario (double)
 │   ├── cash/         # Algorithme glouton pour la monnaie
 │   └── credit/       # Validation de carte de crédit (algorithme de Luhn)
-└── Week 2 — Arrays/  # Exercices de la semaine 2 (Arrays, Strings)
-    ├── readability/  # Indice de lecture Coleman-Liau
-    ├── scrabble/     # Calcul de score Scrabble
-    ├── caesar/       # Chiffrement de César
-    └── substitution/ # Chiffrement par substitution
+├── Week 2 — Arrays/  # Exercices de la semaine 2 (Arrays, Strings)
+│   ├── readability/  # Indice de lecture Coleman-Liau
+│   ├── scrabble/     # Calcul de score Scrabble
+│   ├── caesar/       # Chiffrement de César
+│   └── substitution/ # Chiffrement par substitution
+├── Week 3 — Algorithms/ # Exercices de la semaine 3 (Algorithmes de tri et vote)
+│   ├── sort/         # Identification des algorithmes de tri
+│   ├── plurality/    # Élection à la pluralité
+│   ├── runoff/       # Scrutin à élimination progressive (instant runoff)
+│   └── tideman/      # Méthode de Tideman (ranked pairs)
+├── Week 4 — Memory/  # Exercices de la semaine 4 (Mémoire, pointeurs, fichiers)
+│   ├── volume/       # Modification du volume d'un fichier WAV
+│   ├── filter-less/  # Filtres d'images (grayscale, sepia, reflect, blur)
+│   ├── filter-more/  # Filtres d'images avancés (edges)
+│   └── recover/      # Récupération de fichiers JPEG
+└── Week 5 — Data Structures/ # Exercices de la semaine 5 (Structures de données)
+    ├── inheritance/  # Simulation de groupes sanguins par héritage
+    └── speller/      # Correcteur orthographique avec table de hachage
 ```
 
 ## Prérequis
@@ -58,6 +71,11 @@ make "Week 2 — Arrays/scrabble/scrabble"
 make "Week 2 — Arrays/caesar/caesar"
 make "Week 2 — Arrays/substitution/substitution"
 
+# Week 3 — Algorithms
+make "Week 3 — Algorithms/plurality/plurality"
+make "Week 3 — Algorithms/runoff/runoff"
+make "Week 3 — Algorithms/tideman/tideman"
+
 # Nettoyer les exécutables
 make clean
 ```
@@ -79,6 +97,11 @@ make clean
 ./"Week 2 — Arrays/scrabble/scrabble"
 ./"Week 2 — Arrays/caesar/caesar" 13
 ./"Week 2 — Arrays/substitution/substitution" NQXPOMAFTRHLZGECYJIUWSKDVB
+
+# Week 3 (plurality, runoff et tideman nécessitent des noms de candidats)
+./"Week 3 — Algorithms/plurality/plurality" Alice Bob Charlie
+./"Week 3 — Algorithms/runoff/runoff" Alice Bob Charlie
+./"Week 3 — Algorithms/tideman/tideman" Alice Bob Charlie
 ```
 
 ### Vérification avec check50
@@ -95,11 +118,16 @@ cd "Week 1 — C/mario-more" && check50 cs50/problems/2026/x/mario/more
 cd "Week 1 — C/cash" && check50 cs50/problems/2026/x/cash
 cd "Week 1 — C/credit" && check50 cs50/problems/2026/x/credit
 
-# Week 2 — Arrays (depuis la racine du projet)
+# Week 2 — Arrays
 cd "Week 2 — Arrays/readability" && check50 cs50/problems/2026/x/readability
 cd "Week 2 — Arrays/scrabble" && check50 cs50/problems/2026/x/scrabble
 cd "Week 2 — Arrays/caesar" && check50 cs50/problems/2026/x/caesar
 cd "Week 2 — Arrays/substitution" && check50 cs50/problems/2026/x/substitution
+
+# Week 3 — Algorithms
+cd "Week 3 — Algorithms/plurality" && check50 cs50/problems/2026/x/plurality
+cd "Week 3 — Algorithms/runoff" && check50 cs50/problems/2026/x/runoff
+cd "Week 3 — Algorithms/tideman" && check50 cs50/problems/2026/x/tideman
 ```
 
 ### Soumission avec submit50
@@ -178,6 +206,58 @@ Le Makefile à la racine configure automatiquement :
 - Argument : clé de 26 caractères, chaque lettre une seule fois
 - Préserve la casse, insensible à la casse pour la clé
 - Usage : `./substitution key`
+
+### Week 3 — Algorithms
+
+#### sort
+**Sort** - Identification d'algorithmes de tri en analysant les performances
+- Analyse des temps d'exécution sur données aléatoires, triées et inversées
+- Identification de Bubble Sort, Merge Sort et Selection Sort
+
+#### plurality
+**Plurality** - Élection à la pluralité (le candidat avec le plus de votes gagne)
+- Vote par nom de candidat
+- Gestion des égalités (affiche tous les gagnants)
+- Usage : `./plurality Alice Bob Charlie`
+
+#### runoff
+**Runoff** - Scrutin à élimination progressive (instant runoff voting)
+- Système de vote par classement préférentiel
+- Élimination successive du candidat en dernière place
+- Gestion des égalités et des votes invalides
+- Usage : `./runoff Alice Bob Charlie`
+
+#### tideman
+**Tideman** - Méthode des paires classées (ranked pairs / Condorcet)
+- Algorithme le plus complexe : tally → sort → lock
+- Détection de cycles par DFS récursif dans le graphe verrouillé
+- Garantit l'élection du gagnant de Condorcet s'il existe
+- Usage : `./tideman Alice Bob Charlie`
+
+### Week 4 — Memory
+
+#### volume
+**Volume** - Modifie le volume d'un fichier audio WAV par un facteur donné
+
+#### filter-less
+**Filter (Less)** - Applique des filtres sur des images BMP
+- Grayscale, sepia, reflect, blur
+
+#### filter-more
+**Filter (More)** - Filtres d'images avancés
+- Inclut la détection de contours (Sobel edge detection)
+
+#### recover
+**Recover** - Récupère des fichiers JPEG à partir d'une image brute de carte mémoire
+
+### Week 5 — Data Structures
+
+#### inheritance
+**Inheritance** - Simule l'héritage de groupes sanguins sur plusieurs générations
+
+#### speller
+**Speller** - Correcteur orthographique utilisant une table de hachage
+- Chargement d'un dictionnaire, vérification de mots dans un texte
 
 ## Notes techniques
 
