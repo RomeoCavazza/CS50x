@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Assets/cs50-logo.png" alt="CS50 Logo" width="350"/>
+  <img src="Assets/image-removebg-preview(2).png" alt="CS50 Logo" width="350"/>
 </p>
 
 <h1 align="center">Harvard CS50x 2026</h1>
