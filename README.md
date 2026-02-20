@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Assets/cs50-logo.png" alt="CS50 Logo" width="500"/>
+  <img src="Assets/cs50-logo.png" alt="CS50 Logo" width="350"/>
 </p>
 
 <h1 align="center">CS50 — Introduction to Computer Science</h1>
