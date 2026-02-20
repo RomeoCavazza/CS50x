@@ -1,4 +1,23 @@
-# CS50 - Introduction to Computer Science
+<p align="center">
+  <img src="Assets/cs50-logo.png" alt="CS50 Logo" width="200"/>
+</p>
+
+<h1 align="center">CS50 — Introduction to Computer Science</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Course-CS50x_2026-red?style=for-the-badge&logo=harvard" alt="CS50x 2026"/>
+  <img src="https://img.shields.io/badge/Language-C-blue?style=for-the-badge&logo=c" alt="C"/>
+  <img src="https://img.shields.io/badge/Progress-5%2F11_Weeks-brightgreen?style=for-the-badge" alt="Progress"/>
+  <img src="https://img.shields.io/badge/University-Harvard-A51C30?style=for-the-badge" alt="Harvard"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/RomeoCavazza/CS50?style=flat-square&color=blue" alt="Last Commit"/>
+  <img src="https://img.shields.io/github/repo-size/RomeoCavazza/CS50?style=flat-square&color=green" alt="Repo Size"/>
+  <img src="https://img.shields.io/github/languages/top/RomeoCavazza/CS50?style=flat-square" alt="Top Language"/>
+</p>
+
+---
 
 Ce dépôt contient mes solutions pour le cours CS50 de Harvard.
 
