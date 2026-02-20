@@ -257,26 +257,38 @@ Le Makefile à la racine configure automatiquement :
 
 #### volume
 **Volume** - Modifie le volume d'un fichier audio WAV par un facteur donné
+- Manipulation directe d'en-têtes et d'échantillons audio
+- Usage : `./volume input.wav output.wav factor`
 
 #### filter-less
 **Filter (Less)** - Applique des filtres sur des images BMP
-- Grayscale, sepia, reflect, blur
+- Implémente `grayscale`, `sepia`, `reflect` et `blur`
+- Manipulation de pixels via la structure `RGBTRIPLE`
 
 #### filter-more
 **Filter (More)** - Filtres d'images avancés
-- Inclut la détection de contours (Sobel edge detection)
+- Ajoute la détection de contours (Sobel edge detection)
+- Implémente `edges` en plus des filtres de base
 
 #### recover
 **Recover** - Récupère des fichiers JPEG à partir d'une image brute de carte mémoire
+- Analyse forensique bit par bit
+- Détection de signatures JPEG (`0xff 0xd8 0xff 0xe?`)
+- Gestion dynamique de fichiers (50 images récupérées)
 
 ### Week 5 — Data Structures
 
 #### inheritance
 **Inheritance** - Simule l'héritage de groupes sanguins sur plusieurs générations
+- Utilisation de structures récursives et d'allocation dynamique
+- Gestion de la mémoire (allocation/libération) pour un arbre généalogique
 
 #### speller
 **Speller** - Correcteur orthographique utilisant une table de hachage
-- Chargement d'un dictionnaire, vérification de mots dans un texte
+- Chargement d'un dictionnaire de ~143k mots en mémoire
+- Table de hachage optimisée avec fonction de hachage **djb2**
+- Vérification orthographique insensible à la casse en temps constant (ou presque)
+- Tests de performance avec `check50` et benchmarks (`getrusage`)
 
 ## Notes techniques
 
