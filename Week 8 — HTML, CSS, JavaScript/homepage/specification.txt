@@ -1,0 +1,40 @@
+Roméo Cavazza Professional Homepage Specification
+
+HTML Tags used (at least 10):
+1. nav - Navigation bars on all pages.
+2. button - Theme toggle and mobile menu.
+3. span - Tech badges and inline highlights.
+4. ul/li - Navbar links and list structures.
+5. a - Hyperlinks for profiles, resume, and socials.
+6. main - Semantic container for page content.
+7. div - Bootstrap grid and custom component wrappers.
+8. h1/h2/h3/h5 - Hierarchical headers for sections.
+9. p - Narrative and descriptive text content.
+10. section - Logical blocks for Hero, Timeline, and Grid.
+11. img - Profile photo and project screenshots.
+12. footer - Global site footer.
+
+CSS Selectors used (at least 5):
+1. :root - Advanced HSL variable system.
+2. .dark-mode - Robust theme overrides.
+3. .hero-v2 - Flexbox-based professional profile layout.
+4. .project-card - Interactive cards with image overlays and badges.
+5. .timeline - Styled vertical career progression.
+6. .profile-img - Styled circular avatar with hover effects.
+7. .card - Unified styling for content cards on Hobbies/Contact pages.
+
+CSS Properties used (at least 5):
+1. font-family - Poppins typography across the site.
+2. background-color - Variable-based theming.
+3. transition - Smooth animation for interactions.
+4. box-shadow - Depth for cards, timeline, and hero image.
+5. display: flex/grid - Modern layout techniques.
+6. object-fit - Image scaling and alignment.
+7. transform - Card hover elevation and rotation.
+
+JavaScript Usage:
+- Implemented a persistent Dark Mode toggle using localStorage.
+- Added form validation and dynamic visual feedback on the contact page.
+
+Bootstrap Usage:
+- Integrated Bootstrap 4 for its responsive grid (container, row, col), Navbar, and Utility classes (d-flex, gap, shadow-none, mb-4).
