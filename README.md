@@ -7,7 +7,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Language-C-blue?style=flat-square&logo=c" alt="C"/>
   <img src="https://img.shields.io/badge/Language-Python-yellow?style=flat-square&logo=python" alt="Python"/>
-  <img src="https://img.shields.io/badge/Progress-6%2F11_Weeks-success?style=flat-square" alt="Progress"/>
+  <img src="https://img.shields.io/badge/Language-SQL-orange?style=flat-square&logo=sqlite" alt="SQL"/>
+  <img src="https://img.shields.io/badge/Language-Web-red?style=flat-square&logo=html5" alt="Web"/>
+  <img src="https://img.shields.io/badge/Progress-8%2F11_Weeks-success?style=flat-square" alt="Progress"/>
 </p>
 
 ---
@@ -24,6 +26,8 @@ Ce dépôt regroupe mes solutions pour le cours **CS50 Introduction to Computer 
 | **04** | Memory | Volume, Filter, Recover |
 | **05** | Data Structures | Speller, Inheritance |
 | **06** | Python | DNA, Sentimental Problems |
+| **07** | SQL | Songs, Movies, Fiftyville |
+| **08** | HTML, CSS, JS | Trivia, Homepage |
 
 ## 🛠️ Utilisation Rapide
 
@@ -35,8 +39,18 @@ make "Week 1 — C/world/hello"
 
 Pour les exercices en Python (**Week 6**) :
 ```bash
-cd "Week 6 — Python/dna"
-python3 dna.py databases/small.csv sequences/1.txt
+python3 "Week 6 — Python/dna/dna.py" databases/large.csv sequences/1.txt
+```
+
+Pour les bases de données (**Week 7**) :
+```bash
+sqlite3 "Week 7 — SQL/movies/movies.db" < "Week 7 — SQL/movies/1.sql"
+```
+
+Pour la partie Web (**Week 8**) :
+```bash
+cd "Week 8 — HTML, CSS, JavaScript/homepage"
+http-server
 ```
 
 ---
