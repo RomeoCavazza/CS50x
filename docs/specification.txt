@@ -1,0 +1,57 @@
+================================================================================
+CS50x — Technical Specification & Logic Dictionary
+================================================================================
+Academic Project: Harvard CS50x 2026
+Course Focus: Computer Science Fundamentals & Problem Solving
+
+--------------------------------------------------------------------------------
+1. CORE CONCEPTS & LOGIC
+--------------------------------------------------------------------------------
+Computational Thinking
+  Solving problems via abstraction, decomposition, and algorithmic design.
+
+Big O Notation
+  Standardized measurement of time and space complexity for all implemented
+  algorithms (O(1), O(log n), O(n), O(n log n), O(n²)).
+
+--------------------------------------------------------------------------------
+2. SYSTEM PROGRAMMING (C)
+--------------------------------------------------------------------------------
+Memory Management:
+  - Pointers: Direct address manipulation, dereferencing.
+  - Heap vs Stack: Manual allocation via `malloc` and `free`.
+  - Garbage Collection: None (manual management).
+
+Data Structures:
+  - Linked Lists: Dynamic sequential access.
+  - Hash Tables: Key-value mapping with collision handling (chaining).
+  - Tries: Prefix-based retrieval for high-speed dictionary lookup (Speller).
+
+--------------------------------------------------------------------------------
+3. MODERN PROGRAMMING (Python)
+--------------------------------------------------------------------------------
+Logic:
+  - Transition from manual memory to dynamic typing and built-in abstractions.
+  - Usage of libraries for CSV handling, regex, and data analysis (DNA).
+
+--------------------------------------------------------------------------------
+4. DATA PERSISTENCE (SQL)
+--------------------------------------------------------------------------------
+Storage:
+  - Flat files (CSV) vs Relational databases (SQLite).
+  - Queries: SELECT, JOIN, GROUP BY, subqueries for complex data retrieval.
+
+--------------------------------------------------------------------------------
+5. WEB EVOLUTION (Flask & JS)
+--------------------------------------------------------------------------------
+Architecture:
+  - Frontend: Semantic HTML5, CSS layout (Grid/Flexbox), and DOM manipulation.
+  - Backend: Route handling in Flask, session management, and Jinja2 templates.
+  - State: Client-side storage and session persistence.
+
+--------------------------------------------------------------------------------
+6. VERIFICATION & QUALITY
+--------------------------------------------------------------------------------
+  - Correctness: Verified via `check50` (unit/integration tests).
+  - Style: Verified via `style50` (linting/readability).
+  - Memory Safety: Verified via `valgrind` (leak detection).
