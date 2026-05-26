@@ -1,6 +1,6 @@
 <!-- markdownlint-enable MD033 -->
 <div align="center">
-  <img src="docs/hero.webp" alt="CS50 Logo" width="350"/>
+  <img src="docs/hero.webp" alt="CS50 Logo" width="100%"/>
 </div>
 
 <div align="center">
