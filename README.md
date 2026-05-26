@@ -2,6 +2,19 @@
 <div align="center">
   <img src="docs/image-removebg-preview(2).png" alt="CS50 Logo" width="350"/>
 </div>
+
+<div align="center">
+
+![C](https://img.shields.io/badge/Language-C-A8B9CC?logo=c&logoColor=white)
+![Python](https://img.shields.io/badge/Language-Python-3776AB?logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/Database-SQL-4479A1?logo=sqlite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/Language-JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Flask](https://img.shields.io/badge/Framework-Flask-000000?logo=flask&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+
+</div>
+
 <!-- markdownlint-enable MD033 -->
 
 ## Overview
@@ -12,6 +25,44 @@ This repository contains my solutions for Harvard University's **CS50x: Introduc
 - **Scope**: From low-level memory management in C to high-level web development with Python and Flask.
 - **Progress**: 10/11 Weeks Completed + Final Project.
 - **Documentation**: [Technical Specification](docs/specification.txt)
+
+---
+
+## Quick Start
+
+### Clone Repository
+
+```bash
+# HTTPS
+git clone https://github.com/RomeoCavazza/CS50x.git
+
+# SSH
+git clone git@github.com:RomeoCavazza/CS50x.git
+```
+
+### Useful Commands
+
+**Compile a program:**
+```bash
+make Week_01\ —\ C/me/hello
+```
+
+**Run check50:**
+```bash
+make Week_01\ —\ C/me/check
+```
+
+**Submit to CS50:**
+```bash
+make Week_01\ —\ C/me/submit
+```
+
+**Clean compiled binaries:**
+```bash
+make clean
+```
+
+---
 
 ### Repository Structure
 
@@ -27,7 +78,7 @@ CS50x/
 ├── Week 08 — HTML, CSS, JS    # Homepage, Trivia
 ├── Week 09 — Flask            # Finance
 ├── Week 10 — Final Project    # Web application
-└── Assets/                    # Images and resources
+└── docs/                      # Documentation & specification
 ```
 
 ---
@@ -194,32 +245,6 @@ Repository analysis using [cloc](https://github.com/AlDanial/cloc):
 | **TOTAL** | **159** | **97,131** | **532** | **925,238** |
 
 The repository balances low-level system programming (C) with high-level application development (Python/Web).
-
----
-
-## Technologies Covered
-
-- **Low-level**: C (Pointers, Memory, Structs)
-- **High-level**: Python (Dicts, Lists, Objects)
-- **Databases**: SQLite, SQL
-- **Web Development**: HTML5, CSS3, JavaScript (ES6+), Flask
-- **Data Structures**: Linked Lists, Hash Tables, Binary Search Trees, Tries
-
-## Tools & Environment
-
-- **Compiler**: `clang`, `gcc`
-- **Build System**: `make`
-- **Debugger**: `debug50`, `gdb`, `valgrind`
-- **Environment**: VS Code (CS50 Sandbox/Codespaces)
-- **Testing**: `check50`, `style50`
-
-## Skills Developed
-
-- **Computational Thinking**: Decomposing complex problems into smaller parts.
-- **Algorithm Design**: Sorting, searching, and complexity analysis.
-- **Memory Safety**: Manual memory management and leak prevention.
-- **Web Architecture**: Client-server model, RESTful APIs.
-- **Database Design**: Normalization and efficient querying.
 
 ---
 <p align="center">
