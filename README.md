@@ -17,15 +17,15 @@ This repository contains my solutions for Harvard University's **CS50x: Introduc
 
 ```text
 CS50x/
-├── Week 1 — C                # Fundamentals, Mario, Cash, Credit, Hello
-├── Week 2 — Arrays           # Caesar, Readability, Scrabble, Substitution
-├── Week 3 — Algorithms       # Plurality, Runoff, Sort, Tideman
-├── Week 4 — Memory           # Filter (less/more), Recover, Volume
-├── Week 5 — Data Structures  # Inheritance, Speller
-├── Week 6 — Python           # DNA, Sentimental projects
-├── Week 7 — SQL              # Songs, Movies, Fiftyville
-├── Week 8 — HTML, CSS, JS    # Homepage, Trivia
-├── Week 9 — Flask            # Finance
+├── Week 01 — C                # Fundamentals, Mario, Cash, Credit, Hello
+├── Week 02 — Arrays           # Caesar, Readability, Scrabble, Substitution
+├── Week 03 — Algorithms       # Plurality, Runoff, Sort, Tideman
+├── Week 04 — Memory           # Filter (less/more), Recover, Volume
+├── Week 05 — Data Structures  # Inheritance, Speller
+├── Week 06 — Python           # DNA, Sentimental projects
+├── Week 07 — SQL              # Songs, Movies, Fiftyville
+├── Week 08 — HTML, CSS, JS    # Homepage, Trivia
+├── Week 09 — Flask            # Finance
 ├── Week 10 — Final Project    # Web application
 └── Assets/                    # Images and resources
 ```
@@ -34,77 +34,77 @@ CS50x/
 
 ## Weeks Overview
 
-### Week 1 — C
+### Week 01 — C
 
 Introduction to the C programming language, compilation, and basic logic.
 
 Projects: Hello, Mario (less/more), Cash, Credit
 
-[View Week 1](Week%201%20—%20C/)
+[View Week 01](Week%2001%20—%20C/)
 
-### Week 2 — Arrays
+### Week 02 — Arrays
 
 Deeper dive into memory, arrays, and string manipulation.
 
 Projects: Caesar, Readability, Scrabble, Substitution
 
-[View Week 2](Week%202%20—%20Arrays/)
+[View Week 02](Week%2002%20—%20Arrays/)
 
-### Week 3 — Algorithms
+### Week 03 — Algorithms
 
 Sorting and searching algorithms, computational complexity (Big O).
 
 Projects: Plurality, Runoff, Sort, Tideman
 
-[View Week 3](Week%203%20—%20Algorithms/)
+[View Week 03](Week%2003%20—%20Algorithms/)
 
-### Week 4 — Memory
+### Week 04 — Memory
 
 Pointers, memory allocation (malloc/free), and file I/O operations.
 
 Projects: Volume, Filter (less/more), Recover
 
-[View Week 4](Week%204%20—%20Memory/)
+[View Week 04](Week%2004%20—%20Memory/)
 
-### Week 5 — Data Structures
+### Week 05 — Data Structures
 
 Implementing linked lists, hash tables, and tries for efficient data handling.
 
 Projects: Inheritance, Speller
 
-[View Week 5](Week%205%20—%20Data%20Structures/)
+[View Week 05](Week%2005%20—%20Data%20Structures/)
 
-### Week 6 — Python
+### Week 06 — Python
 
 Transition to modern, high-level programming with Python.
 
 Projects: DNA, Sentimental Cash, Credit, Hello, Mario (less/more), Readability
 
-[View Week 6](Week%206%20—%20Python/)
+[View Week 06](Week%2006%20—%20Python/)
 
-### Week 7 — SQL
+### Week 07 — SQL
 
 Relational databases, SQL queries, and data normalization.
 
 Projects: Songs, Movies, Fiftyville
 
-[View Week 7](Week%207%20—%20SQL/)
+[View Week 07](Week%2007%20—%20SQL/)
 
-### Week 8 — HTML, CSS, JavaScript
+### Week 08 — HTML, CSS, JavaScript
 
 Building the modern web frontend: structures, styles, and interactivity.
 
 Projects: Homepage, Trivia
 
-[View Week 8](Week%208%20—%20HTML,%20CSS,%20JavaScript/)
+[View Week 08](Week%2008%20—%20HTML,%20CSS,%20JavaScript/)
 
-### Week 9 — Flask
+### Week 09 — Flask
 
 Full-stack development using the Flask framework.
 
 Projects: Finance
 
-[View Week 9](Week%209%20—%20Flask/)
+[View Week 09](Week%2009%20—%20Flask/)
 
 ### Week 10 \u2014 Final Project
 

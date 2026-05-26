@@ -4,7 +4,7 @@ This portal provides technical insights and repository metrics for the CS50x cou
 
 ---
 
-## 📂 Documentation Structure
+## Documentation Structure
 
 ```text
 docs/
@@ -15,7 +15,7 @@ docs/
 
 ---
 
-## 🛠️ Global Stack
+## Global Stack
 
 | Layer | Technology |
 | :--- | :--- |
@@ -27,15 +27,15 @@ docs/
 
 ---
 
-## 📈 Code Metrics
+## Code Metrics
 
 The repository is balanced between low-level system programming (C) and high-level application development (Python/Web).
 
-→ [**View Full CLOC Report**](./cloc-report.md)
+[View Full CLOC Report](./cloc-report.md)
 
 ---
 
-## 🔗 Quick Links
+## Quick Links
 
 - [**Technical Specification**](./specification.txt) — Core logic breakdown.
 - [**Harvard CS50x**](https://cs50.harvard.edu/x/) — Official course website.
