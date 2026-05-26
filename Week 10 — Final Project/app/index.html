@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Maturity Diagnostic | Digital Acculturation</title>
+  <meta name="description"
+    content="Assess your generative AI maturity level in under 2 minutes. Get your score, profile, and growth priorities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/app.css?v=27" />
+  <link rel="stylesheet" href="./assets/css/pdf.css?v=7" />
+</head>
+
+<body>
+  <main id="an-diagnostic" x-data="aiMaturityDiagnostic()" x-init="init()">
+    <section class="an-panel an-hero an-hero-fx an-fade-in" x-show="step === 'intro'">
+      <div class="an-hero-bg-icons" aria-hidden="true">
+        <div class="an-hero-float an-hero-float--1" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/chatgpt.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--2" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/claude.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--3" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/ollama.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--4" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/openclaw.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--5" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/lovable.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--6" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/claudecode.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--7" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/gemini.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--8" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/perplexity.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--9" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/cursor.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--10" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/manus.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--11" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/n8n.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="an-hero-float an-hero-float--12" data-float-icon>
+          <div class="an-hero-float-inner">
+            <img class="an-hero-float-logo" src="./assets/public/icons/huggingface.webp" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+
+      <div class="an-hero-content">
+        <h1 class="an-title an-hero-title-gradient">Artificial Intelligence Maturity Scale</h1>
+        <p class="an-lead">
+          Measure your AI maturity and prioritize your next gains.
+        </p>
+        <div class="an-actions an-hero-actions">
+          <button class="an-btn an-btn-primary an-hero-cta" type="button" @click="start()">
+            Start my assessment
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="an-section an-panel an-card an-card-questions an-fade-in" x-show="step === 'questions'" x-cloak>
+      <div class="an-stepper">
+        <span class="an-stepper-badge" x-text="progressLabel"></span>
+        <template x-for="(item, idx) in categories" :key="item.key">
+          <span class="an-step-dot" :class="{ active: idx <= currentCategoryIndex }"></span>
+        </template>
+      </div>
+
+      <h2 class="an-card-title" x-text="currentCategory.title"></h2>
+
+      <!-- Grid legend at the top -->
+      <div class="an-checklist-legend">
+        <div></div> <!-- Spacer to align options on the right -->
+        <div class="an-legend-options">
+          <span>Partial</span>
+          <span>Achieved</span>
+        </div>
+      </div>
+
+      <div class="an-checklist" role="group" aria-label="Questions in the current category">
+        <template x-for="q in currentQuestions" :key="q.id">
+          <div class="an-checklist-row">
+            <span class="an-checklist-label" x-text="q.label"></span>
+            <div class="an-checklist-options">
+              <!-- Partially achieved (0.5) -->
+              <label class="an-mini-box" :class="{ 'active-box': answers[q.id] === 0.5 }" :aria-label="`Partially achieved - ${q.label}`">
+                <input type="checkbox" :checked="answers[q.id] === 0.5"
+                  @change="answers[q.id] = $event.target.checked ? 0.5 : 0" />
+              </label>
+
+              <!-- Fully achieved (1) -->
+              <label class="an-mini-box" :class="{ 'active-box': answers[q.id] === 1 }" :aria-label="`Fully achieved - ${q.label}`">
+                <input type="checkbox" :checked="answers[q.id] === 1"
+                  @change="answers[q.id] = $event.target.checked ? 1 : 0" />
+              </label>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <div class="an-nav">
+        <button type="button" class="an-btn an-btn-secondary" @click="previousCategory()">
+          Previous
+        </button>
+
+        <button x-show="!isLastCategory" type="button" class="an-btn an-btn-primary" @click="nextCategory()">
+          Next
+        </button>
+
+        <button x-show="isLastCategory" type="button" class="an-btn an-btn-primary" @click="showResults()">
+          View my results
+        </button>
+      </div>
+    </section>
+
+    <section class="an-section an-results-shell an-fade-in" x-show="step === 'results'" x-cloak>
+      <header class="an-panel an-card an-results-top">
+        <div>
+          <h2 class="an-card-title">Your AI maturity assessment</h2>
+          <p class="an-results-summary an-pdf-only" x-text="pdfSummary"></p>
+          <p class="an-results-meta an-pdf-only" x-text="pdfMeta"></p>
+        </div>
+        <div class="an-actions an-results-actions">
+          <button type="button" class="an-btn an-btn-primary" @click="downloadDiagnosticPdf()">
+            Download my assessment
+          </button>
+          <button type="button" class="an-btn an-btn-secondary" @click="reset()">
+            Start over
+          </button>
+        </div>
+      </header>
+
+      <div class="an-bento-grid">
+        <article class="an-card an-bento-card an-bento-bars">
+          <div class="an-bento-head">
+            <h3 class="an-bento-title">Progress by criterion</h3>
+          </div>
+          <div class="an-bars an-bars-tight">
+            <template x-for="row in dimensionScores" :key="`bar-${row.name}`">
+              <div class="an-bar-row">
+                <div class="an-bar-label">
+                  <span x-text="row.name"></span>
+                  <strong x-text="`${row.score}/${row.max}`"></strong>
+                </div>
+                <div class="an-bar-track">
+                  <div class="an-bar-fill" :style="`width:${row.percent}%`"></div>
+                </div>
+              </div>
+            </template>
+          </div>
+        </article>
+
+        <article class="an-card an-bento-card an-bento-radar">
+          <div class="an-bento-head">
+            <h3 class="an-bento-title">Dimension radar</h3>
+          </div>
+          <svg class="an-radar-svg" viewBox="-30 0 320 260" role="img" aria-label="Dimension breakdown">
+            <defs>
+              <linearGradient id="an-radar-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="rgba(29, 86, 216, 0.28)" />
+                <stop offset="100%" stop-color="rgba(29, 156, 204, 0.16)" />
+              </linearGradient>
+            </defs>
+            <template xmlns="http://www.w3.org/1999/xhtml" x-for="ring in radarChart.rings" :key="`ring-${ring.scale}`">
+              <polygon class="an-radar-ring" :points="ring.points"></polygon>
+            </template>
+            <template xmlns="http://www.w3.org/1999/xhtml" x-for="axis in radarChart.axes" :key="`axis-${axis.key}`">
+              <line class="an-radar-axis" :x1="radarChart.center" :y1="radarChart.center" :x2="axis.x" :y2="axis.y">
+              </line>
+            </template>
+            <polygon class="an-radar-shape" :points="radarChart.shape"></polygon>
+            <template xmlns="http://www.w3.org/1999/xhtml" x-for="axis in radarChart.axes" :key="`dot-${axis.key}`">
+              <circle class="an-radar-dot" :cx="axis.scoreX" :cy="axis.scoreY" r="3.25"></circle>
+            </template>
+            <template xmlns="http://www.w3.org/1999/xhtml" x-for="axis in radarChart.axes" :key="`label-${axis.key}`">
+              <text class="an-radar-label" :x="axis.labelX" :y="axis.labelY" x-text="axis.shortLabel"></text>
+            </template>
+          </svg>
+        </article>
+
+        <article class="an-card an-bento-card an-bento-score">
+          <div class="an-bento-head">
+            <h3 class="an-bento-title">Overall score</h3>
+          </div>
+          <div class="an-score-ring" :style="scoreRingStyle" role="img" :aria-label="scoreAriaLabel">
+            <span x-text="scoreTotal"></span>
+            <small>/20</small>
+          </div>
+          <div class="an-score-meta">
+            <strong>
+              <span x-text="currentLevel ? currentLevel.level : ''"></span>
+              <span>·</span>
+              <span x-text="currentLevel ? currentLevel.profile : ''"></span>
+            </strong>
+            <p class="an-score-desc" x-text="currentLevel ? currentLevel.summary : ''"></p>
+          </div>
+          <div class="an-score-divider"></div>
+          <div class="an-score-priorities">
+            <div class="an-score-priorities-block">
+              <h4 class="an-score-priorities-title">Recommended priorities</h4>
+              <ul class="an-kpi-list">
+                <template x-for="item in currentLevel ? currentLevel.priorities : []" :key="item">
+                  <li x-text="item"></li>
+                </template>
+              </ul>
+            </div>
+            <div class="an-score-priorities-block" x-show="currentLevel && currentLevel.nextStep">
+              <h4 class="an-score-priorities-title">Next step</h4>
+              <ul class="an-kpi-list">
+                <li x-text="currentLevel ? currentLevel.nextStep : ''"></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="an-card an-bento-card an-bento-line">
+          <div class="an-bento-head">
+            <h3 class="an-bento-title">Maturity by stage</h3>
+          </div>
+          <svg class="an-line-svg" viewBox="0 0 500 180" role="img" aria-label="Progress by category">
+            <defs>
+              <linearGradient id="an-line-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="rgba(29, 86, 216, 0.22)" />
+                <stop offset="100%" stop-color="rgba(29, 86, 216, 0.0)" />
+              </linearGradient>
+            </defs>
+            <path class="an-line-area" :d="trajectoryChart.area"></path>
+            <path class="an-line-path" :d="trajectoryChart.line"></path>
+            <template xmlns="http://www.w3.org/1999/xhtml" x-for="point in trajectoryChart.points"
+              :key="`point-${point.key}`">
+              <g>
+                <circle class="an-line-dot" :cx="point.x" :cy="point.y" r="4"></circle>
+                <text class="an-line-label" :x="point.x" y="166" x-text="point.shortLabel"></text>
+              </g>
+            </template>
+          </svg>
+        </article>
+
+        <article class="an-card an-bento-card an-bento-next">
+          <div class="an-bento-head">
+            <h3 class="an-bento-title">Recommended tools</h3>
+          </div>
+          <ul class="an-tools-grid">
+            <template x-for="tool in toolVisuals" :key="`tool-${tool.name}`">
+              <a :href="tool.url" target="_blank" rel="noopener noreferrer" class="an-tool-pill">
+                <span class="an-tool-icon">
+                  <template x-if="tool.iconUrl">
+                    <img :src="tool.iconUrl" :alt="`Logo of ${tool.name}`" loading="lazy" />
+                  </template>
+                  <template x-if="!tool.iconUrl">
+                    <span class="an-tool-fallback" x-text="tool.fallback"></span>
+                  </template>
+                </span>
+                <span x-text="tool.name"></span>
+              </a>
+            </template>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="./assets/js/app.js?v=21"></script>
+</body>
+
+</html>
