@@ -1,6 +1,6 @@
 <!-- markdownlint-enable MD033 -->
 <div align="center">
-  <img src="Assets/image-removebg-preview(2).png" alt="CS50 Logo" width="350"/>
+  <img src="docs/image-removebg-preview(2).png" alt="CS50 Logo" width="350"/>
 </div>
 <!-- markdownlint-enable MD033 -->
 
