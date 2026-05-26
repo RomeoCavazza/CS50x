@@ -10,120 +10,107 @@ This repository contains my solutions for Harvard University's **CS50x: Introduc
 
 - **Objective**: Mastering computational thinking and problem-solving.
 - **Scope**: From low-level memory management in C to high-level web development with Python and Flask.
-- **Progress**: 8/11 Weeks Completed.
-- **Documentation**: [**Technical Portal**](docs/README.md) (Specifications & Metrics)
+- **Progress**: 10/11 Weeks Completed + Final Project.
+- **Documentation**: [Technical Portal](docs/README.md) (Specifications & Metrics)
 
-### Structure
+### Repository Structure
 
 ```text
 CS50x/
-├── Week 1 — C                # Fundamentals, Mario, Cash, Credit
-├── Week 2 — Arrays           # Readability, Caesar, Substitution
-├── Week 3 — Algorithms       # Sorting, Runoff, Tideman
-├── Week 4 — Memory           # Pointers, Volume, Filter, Recover
-├── Week 5 — Data Structures  # Speller, Linked Lists, Hash Tables
-├── Week 6 — Python           # DNA, Sentimental analysis
-├── Week 7 — SQL              # Songs, Movies, Fiftyville (Databases)
-├── Week 8 — HTML, CSS, JS    # Trivia, Homepage, Web UI
-└── Week 9 — Flask            # Finance, Birthday (Web Backend)
-```
-
-### Standardized Organization
-
-Each week follows a uniform structure:
-
-```text
-Week X — Topic/
-├── lab/                      # Guided laboratory exercises
-├── pset/                     # Problem Sets (Assignments)
-└── README.md                 # Weekly overview & notes
+├── Week 1 — C                # Fundamentals, Mario, Cash, Credit, Hello
+├── Week 2 — Arrays           # Caesar, Readability, Scrabble, Substitution
+├── Week 3 — Algorithms       # Plurality, Runoff, Sort, Tideman
+├── Week 4 — Memory           # Filter (less/more), Recover, Volume
+├── Week 5 — Data Structures  # Inheritance, Speller
+├── Week 6 — Python           # DNA, Sentimental projects
+├── Week 7 — SQL              # Songs, Movies, Fiftyville
+├── Week 8 — HTML, CSS, JS    # Homepage, Trivia
+├── Week 9 — Flask            # Finance
+├── Week 10 — Final Project    # Web application
+└── Assets/                    # Images and resources
 ```
 
 ---
 
-## Courses
+## Weeks Overview
 
-### 🕹️ Week 1 — C
+### Week 1 — C
 
 Introduction to the C programming language, compilation, and basic logic.
 
-![C](https://img.shields.io/badge/Language-C-A8B9CC?logo=c&logoColor=white)
-![Algorithms](https://img.shields.io/badge/Algorithms-FF6B6B?logo=algorithm&logoColor=white)
+Projects: Hello, Mario (less/more), Cash, Credit
 
-→ [View Week 1](Week%201%20—%20C/)
+[View Week 1](Week%201%20—%20C/)
 
-### 📊 Week 2 — Arrays
+### Week 2 — Arrays
 
 Deeper dive into memory, arrays, and string manipulation.
 
-![C](https://img.shields.io/badge/Language-C-A8B9CC?logo=c&logoColor=white)
-![Arrays](https://img.shields.io/badge/Arrays-4ECDC4?logo=statuspage&logoColor=white)
+Projects: Caesar, Readability, Scrabble, Substitution
 
-→ [View Week 2](Week%202%20—%20Arrays/)
+[View Week 2](Week%202%20—%20Arrays/)
 
-### ⚡ Week 3 — Algorithms
+### Week 3 — Algorithms
 
 Sorting and searching algorithms, computational complexity (Big O).
 
-![Algorithms](https://img.shields.io/badge/Algorithms-FF6B6B?logo=algorithm&logoColor=white)
-![Big O](https://img.shields.io/badge/Complexity-Big%20O-blue)
+Projects: Plurality, Runoff, Sort, Tideman
 
-→ [View Week 3](Week%203%20—%20Algorithms/)
+[View Week 3](Week%203%20—%20Algorithms/)
 
-### 🧠 Week 4 — Memory
+### Week 4 — Memory
 
 Pointers, memory allocation (malloc/free), and file I/O operations.
 
-![C](https://img.shields.io/badge/Language-C-A8B9CC?logo=c&logoColor=white)
-![Memory](https://img.shields.io/badge/Memory-Pointers-FF9F43)
+Projects: Volume, Filter (less/more), Recover
 
-→ [View Week 4](Week%204%20—%20Memory/)
+[View Week 4](Week%204%20—%20Memory/)
 
-### 🧱 Week 5 — Data Structures
+### Week 5 — Data Structures
 
 Implementing linked lists, hash tables, and tries for efficient data handling.
 
-![Data Structures](https://img.shields.io/badge/Data%20Structures-1A237E?logo=databricks&logoColor=white)
-![Efficiency](https://img.shields.io/badge/Optimization-Performance-27AE60)
+Projects: Inheritance, Speller
 
-→ [View Week 5](Week%205%20—%20Data%20Structures/)
+[View Week 5](Week%205%20—%20Data%20Structures/)
 
-### 🐍 Week 6 — Python
+### Week 6 — Python
 
 Transition to modern, high-level programming with Python.
 
-![Python](https://img.shields.io/badge/Language-Python-3776AB?logo=python&logoColor=white)
-![Scripting](https://img.shields.io/badge/Scripting-Dynamic-yellow)
+Projects: DNA, Sentimental Cash, Credit, Hello, Mario (less/more), Readability
 
-→ [View Week 6](Week%206%20—%20Python/)
+[View Week 6](Week%206%20—%20Python/)
 
-### 🗄️ Week 7 — SQL
+### Week 7 — SQL
 
 Relational databases, SQL queries, and data normalization.
 
-![SQL](https://img.shields.io/badge/Database-SQL-4479A1?logo=sqlite&logoColor=white)
-![Data](https://img.shields.io/badge/Data-Relational-orange)
+Projects: Songs, Movies, Fiftyville
 
-→ [View Week 7](Week%207%20—%20SQL/)
+[View Week 7](Week%207%20—%20SQL/)
 
-### 🎨 Week 8 — HTML, CSS, JavaScript
+### Week 8 — HTML, CSS, JavaScript
 
 Building the modern web frontend: structures, styles, and interactivity.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+Projects: Homepage, Trivia
 
-→ [View Week 8](Week%208%20—%20HTML,%20CSS,%20JavaScript/)
+[View Week 8](Week%208%20—%20HTML,%20CSS,%20JavaScript/)
 
-### 🌐 Week 9 — Flask
+### Week 9 — Flask
 
 Full-stack development using the Flask framework.
 
-![Flask](https://img.shields.io/badge/Framework-Flask-000000?logo=flask&logoColor=white)
-![Web](https://img.shields.io/badge/Web-Backend-red)
+Projects: Finance
 
-→ [View Week 9](Week%209%20—%20Flask/)
+[View Week 9](Week%209%20—%20Flask/)
+
+### Week 10 \u2014 Final Project
+
+Capstone project showcasing comprehensive CS50 knowledge: web development, databases, and backend integration.
+
+[View Week 10](Week%2010%20\u2014%20Final%20Project/)
 
 ---
 
