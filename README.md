@@ -12,6 +12,7 @@ This repository contains my solutions for Harvard University's **CS50x: Introduc
 - **Scope**: From low-level memory management in C to high-level web development with Python and Flask.
 - **Progress**: 10/11 Weeks Completed + Final Project.
 - **Documentation**: [Technical Portal](docs/README.md) (Specifications & Metrics)
+- **Course Index**: [Complete File Navigation](docs/INDEX.md) (All projects and source files)
 
 ### Repository Structure
 
@@ -32,85 +33,24 @@ CS50x/
 
 ---
 
-## Weeks Overview
+## Course Structure
 
-### Week 01 — C
+All course materials organized by week with complete source code and project files:
 
-Introduction to the C programming language, compilation, and basic logic.
+| Week | Topic | Projects | Files |
+| :--- | :--- | :--- | ---: |
+| 01 | C Fundamentals | Hello, Mario, Cash, Credit | 6 |
+| 02 | Arrays | Caesar, Readability, Scrabble, Substitution | 4 |
+| 03 | Algorithms | Plurality, Runoff, Tideman, Sort | 4 |
+| 04 | Memory | Volume, Filter, Recover | 5 |
+| 05 | Data Structures | Inheritance, Speller | 2 |
+| 06 | Python | DNA, Sentimental projects (6) | 7 |
+| 07 | SQL | Songs, Movies, Fiftyville | 23 |
+| 08 | Web Frontend | Homepage, Trivia | 8 |
+| 09 | Flask | Finance application | 12 |
+| 10 | Final Project | AI Tools Landscape | 50+ |
 
-Projects: Hello, Mario (less/more), Cash, Credit
-
-[View Week 01](Week%2001%20—%20C/)
-
-### Week 02 — Arrays
-
-Deeper dive into memory, arrays, and string manipulation.
-
-Projects: Caesar, Readability, Scrabble, Substitution
-
-[View Week 02](Week%2002%20—%20Arrays/)
-
-### Week 03 — Algorithms
-
-Sorting and searching algorithms, computational complexity (Big O).
-
-Projects: Plurality, Runoff, Sort, Tideman
-
-[View Week 03](Week%2003%20—%20Algorithms/)
-
-### Week 04 — Memory
-
-Pointers, memory allocation (malloc/free), and file I/O operations.
-
-Projects: Volume, Filter (less/more), Recover
-
-[View Week 04](Week%2004%20—%20Memory/)
-
-### Week 05 — Data Structures
-
-Implementing linked lists, hash tables, and tries for efficient data handling.
-
-Projects: Inheritance, Speller
-
-[View Week 05](Week%2005%20—%20Data%20Structures/)
-
-### Week 06 — Python
-
-Transition to modern, high-level programming with Python.
-
-Projects: DNA, Sentimental Cash, Credit, Hello, Mario (less/more), Readability
-
-[View Week 06](Week%2006%20—%20Python/)
-
-### Week 07 — SQL
-
-Relational databases, SQL queries, and data normalization.
-
-Projects: Songs, Movies, Fiftyville
-
-[View Week 07](Week%2007%20—%20SQL/)
-
-### Week 08 — HTML, CSS, JavaScript
-
-Building the modern web frontend: structures, styles, and interactivity.
-
-Projects: Homepage, Trivia
-
-[View Week 08](Week%2008%20—%20HTML,%20CSS,%20JavaScript/)
-
-### Week 09 — Flask
-
-Full-stack development using the Flask framework.
-
-Projects: Finance
-
-[View Week 09](Week%2009%20—%20Flask/)
-
-### Week 10 \u2014 Final Project
-
-Capstone project showcasing comprehensive CS50 knowledge: web development, databases, and backend integration.
-
-[View Week 10](Week%2010%20\u2014%20Final%20Project/)
+**Explore all projects:** [Complete Course Index](docs/INDEX.md) with direct file links
 
 ---
 
