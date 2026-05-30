@@ -1023,6 +1023,9 @@ if (typeof document !== 'undefined') {
         );
       },
 
+      // NOTE: Fallback preparation and complex canvas drawings for PDF export 
+      // were developed with the assistance of AI (Google Gemini / Antigravity),
+      // in accordance with CS50's Academic Honesty policy for the Final Project.
       preparePdfCaptureFallbacks(captureNode) {
         const cleanups = [];
         const dpr = Math.max(3, Math.min(4, (window.devicePixelRatio || 1) + 1));
@@ -1375,6 +1378,8 @@ if (typeof document !== 'undefined') {
         captureNode.setAttribute("x-ignore", "");
       },
 
+      // NOTE: The implementation of PDF capture, scaling, and jspdf integration
+      // was developed with the assistance of AI (Google Gemini / Antigravity).
       async downloadDiagnosticPdf() {
         if (typeof window === "undefined") {
           return;
