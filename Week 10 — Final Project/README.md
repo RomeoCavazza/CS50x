@@ -68,6 +68,7 @@ At the end of the evaluation, the system delivers an immediate analytical restit
 The 40 tools in the catalog are each assigned to a score range `[min, max]`. The recommendation algorithm selects the 9 most relevant tools for the obtained score. The tools are distributed across 5 major maturity levels:
 
 **1. Novice**
+
 This level regroups highly accessible conversational assistants and tools natively integrated into daily office suites. They require absolutely no coding experience and allow users to intuitively generate text, synthesize emails, or create basic visual presentations from simple prompts.
 <table><tr>
 <td><img src="app/assets/public/icons/chatgpt.webp" width="30" title="ChatGPT"></td>
@@ -83,6 +84,7 @@ This level regroups highly accessible conversational assistants and tools native
 </tr></table>
 
 **2. Beginner**
+
 This tier introduces foundational automation platforms, open-source models, and low-code web builders. Users at this level can start connecting different applications together using visual flows or build interactive interfaces without needing to write complex algorithms.
 <table><tr>
 <td><img src="app/assets/public/icons/zapier.webp" width="30" title="Zapier"></td>
@@ -95,6 +97,7 @@ This tier introduces foundational automation platforms, open-source models, and 
 </tr></table>
 
 **3. Intermediate**
+
 Aimed at developers and tech-savvy builders, this category includes powerful web extraction APIs, specialized LLMs offering great logic performance, and collaborative machine learning platforms like Hugging Face or Kaggle. It opens the door to creating personalized workflows and handling data science tasks.
 <table><tr>
 <td><img src="app/assets/public/icons/deepseek.webp" width="30" title="DeepSeek"></td>
@@ -109,6 +112,7 @@ Aimed at developers and tech-savvy builders, this category includes powerful web
 </tr></table>
 
 **4. Advanced**
+
 These are robust tools designed specifically for software engineering and localized execution. This level encompasses offline inference applications for running local models, sophisticated AI-powered code editors, and orchestration solutions enabling developers to seamlessly integrate LLMs into complex production architectures.
 <table><tr>
 <td><img src="app/assets/public/icons/lmstudio.webp" width="30" title="LM Studio"></td>
@@ -122,6 +126,7 @@ These are robust tools designed specifically for software engineering and locali
 </tr></table>
 
 **5. Expert**
+
 The final maturity level focuses on entirely autonomous action loops, experimental agentic frameworks, and lifecycle management platforms. These high-end tools allow experts to build and deploy independent AI agents capable of reasoning, utilizing system tools, and resolving deep computational tasks on their own.
 <table><tr>
 <td><img src="app/assets/public/icons/antigravity.webp" width="30" title="Antigravity"></td>
