@@ -69,28 +69,68 @@ The 40 tools in the catalog are each assigned to a score range `[min, max]`. The
 
 **1. Novice**
 This level regroups highly accessible conversational assistants and tools natively integrated into daily office suites. They require absolutely no coding experience and allow users to intuitively generate text, synthesize emails, or create basic visual presentations from simple prompts.
-<br>
-<img src="app/assets/public/icons/chatgpt.webp" width="30" title="ChatGPT"> <img src="app/assets/public/icons/claude.webp" width="30" title="Claude"> <img src="app/assets/public/icons/gemini.webp" width="30" title="Gemini"> <img src="app/assets/public/icons/perplexity.webp" width="30" title="Perplexity"> <img src="app/assets/public/icons/copilot.webp" width="30" title="Microsoft Copilot"> <img src="app/assets/public/icons/googleworkspace.webp" width="30" title="Google Workspace"> <img src="app/assets/public/icons/notebooklm.webp" width="30" title="NotebookLM"> <img src="app/assets/public/icons/notion.webp" width="30" title="Notion"> <img src="app/assets/public/icons/canva.webp" width="30" title="Canva"> <img src="app/assets/public/icons/gamma.webp" width="30" title="Gamma">
+<table><tr>
+<td><img src="app/assets/public/icons/chatgpt.webp" width="30" title="ChatGPT"></td>
+<td><img src="app/assets/public/icons/claude.webp" width="30" title="Claude"></td>
+<td><img src="app/assets/public/icons/gemini.webp" width="30" title="Gemini"></td>
+<td><img src="app/assets/public/icons/perplexity.webp" width="30" title="Perplexity"></td>
+<td><img src="app/assets/public/icons/copilot.webp" width="30" title="Microsoft Copilot"></td>
+<td><img src="app/assets/public/icons/googleworkspace.webp" width="30" title="Google Workspace"></td>
+<td><img src="app/assets/public/icons/notebooklm.webp" width="30" title="NotebookLM"></td>
+<td><img src="app/assets/public/icons/notion.webp" width="30" title="Notion"></td>
+<td><img src="app/assets/public/icons/canva.webp" width="30" title="Canva"></td>
+<td><img src="app/assets/public/icons/gamma.webp" width="30" title="Gamma"></td>
+</tr></table>
 
 **2. Beginner**
 This tier introduces foundational automation platforms, open-source models, and low-code web builders. Users at this level can start connecting different applications together using visual flows or build interactive interfaces without needing to write complex algorithms.
-<br>
-<img src="app/assets/public/icons/zapier.webp" width="30" title="Zapier"> <img src="app/assets/public/icons/grok.webp" width="30" title="Grok"> <img src="app/assets/public/icons/mistral.webp" width="30" title="Mistral"> <img src="app/assets/public/icons/make.webp" width="30" title="Make"> <img src="app/assets/public/icons/airtable.webp" width="30" title="Airtable"> <img src="app/assets/public/icons/replit.webp" width="30" title="Replit"> <img src="app/assets/public/icons/v0.webp" width="30" title="v0">
+<table><tr>
+<td><img src="app/assets/public/icons/zapier.webp" width="30" title="Zapier"></td>
+<td><img src="app/assets/public/icons/grok.webp" width="30" title="Grok"></td>
+<td><img src="app/assets/public/icons/mistral.webp" width="30" title="Mistral"></td>
+<td><img src="app/assets/public/icons/make.webp" width="30" title="Make"></td>
+<td><img src="app/assets/public/icons/airtable.webp" width="30" title="Airtable"></td>
+<td><img src="app/assets/public/icons/replit.webp" width="30" title="Replit"></td>
+<td><img src="app/assets/public/icons/v0.webp" width="30" title="v0"></td>
+</tr></table>
 
 **3. Intermediate**
 Aimed at developers and tech-savvy builders, this category includes powerful web extraction APIs, specialized LLMs offering great logic performance, and collaborative machine learning platforms like Hugging Face or Kaggle. It opens the door to creating personalized workflows and handling data science tasks.
-<br>
-<img src="app/assets/public/icons/deepseek.webp" width="30" title="DeepSeek"> <img src="app/assets/public/icons/qwen.webp" width="30" title="Qwen"> <img src="app/assets/public/icons/lovable.webp" width="30" title="Lovable"> <img src="app/assets/public/icons/apify.webp" width="30" title="Apify"> <img src="app/assets/public/icons/huggingface.webp" width="30" title="Hugging Face"> <img src="app/assets/public/icons/n8n.webp" width="30" title="n8n"> <img src="app/assets/public/icons/kaggle.webp" width="30" title="Kaggle"> <img src="app/assets/public/icons/dify.webp" width="30" title="Dify"> <img src="app/assets/public/icons/ollama.webp" width="30" title="Ollama">
+<table><tr>
+<td><img src="app/assets/public/icons/deepseek.webp" width="30" title="DeepSeek"></td>
+<td><img src="app/assets/public/icons/qwen.webp" width="30" title="Qwen"></td>
+<td><img src="app/assets/public/icons/lovable.webp" width="30" title="Lovable"></td>
+<td><img src="app/assets/public/icons/apify.webp" width="30" title="Apify"></td>
+<td><img src="app/assets/public/icons/huggingface.webp" width="30" title="Hugging Face"></td>
+<td><img src="app/assets/public/icons/n8n.webp" width="30" title="n8n"></td>
+<td><img src="app/assets/public/icons/kaggle.webp" width="30" title="Kaggle"></td>
+<td><img src="app/assets/public/icons/dify.webp" width="30" title="Dify"></td>
+<td><img src="app/assets/public/icons/ollama.webp" width="30" title="Ollama"></td>
+</tr></table>
 
 **4. Advanced**
 These are robust tools designed specifically for software engineering and localized execution. This level encompasses offline inference applications for running local models, sophisticated AI-powered code editors, and orchestration solutions enabling developers to seamlessly integrate LLMs into complex production architectures.
-<br>
-<img src="app/assets/public/icons/lmstudio.webp" width="30" title="LM Studio"> <img src="app/assets/public/icons/langflow.webp" width="30" title="Langflow"> <img src="app/assets/public/icons/flowise.webp" width="30" title="Flowise"> <img src="app/assets/public/icons/githubcopilot.webp" width="30" title="GitHub Copilot"> <img src="app/assets/public/icons/cursor.webp" width="30" title="Cursor"> <img src="app/assets/public/icons/windmill.webp" width="30" title="Windmill"> <img src="app/assets/public/icons/claudecode.webp" width="30" title="Claude Code"> <img src="app/assets/public/icons/langchain.webp" width="30" title="LangChain">
+<table><tr>
+<td><img src="app/assets/public/icons/lmstudio.webp" width="30" title="LM Studio"></td>
+<td><img src="app/assets/public/icons/langflow.webp" width="30" title="Langflow"></td>
+<td><img src="app/assets/public/icons/flowise.webp" width="30" title="Flowise"></td>
+<td><img src="app/assets/public/icons/githubcopilot.webp" width="30" title="GitHub Copilot"></td>
+<td><img src="app/assets/public/icons/cursor.webp" width="30" title="Cursor"></td>
+<td><img src="app/assets/public/icons/windmill.webp" width="30" title="Windmill"></td>
+<td><img src="app/assets/public/icons/claudecode.webp" width="30" title="Claude Code"></td>
+<td><img src="app/assets/public/icons/langchain.webp" width="30" title="LangChain"></td>
+</tr></table>
 
 **5. Expert**
 The final maturity level focuses on entirely autonomous action loops, experimental agentic frameworks, and lifecycle management platforms. These high-end tools allow experts to build and deploy independent AI agents capable of reasoning, utilizing system tools, and resolving deep computational tasks on their own.
-<br>
-<img src="app/assets/public/icons/antigravity.webp" width="30" title="Antigravity"> <img src="app/assets/public/icons/manus.webp" width="30" title="Manus"> <img src="app/assets/public/icons/mcp.webp" width="30" title="MCP"> <img src="app/assets/public/icons/openclaw.webp" width="30" title="OpenClaw"> <img src="app/assets/public/icons/langgraph.webp" width="30" title="LangGraph"> <img src="app/assets/public/icons/mlflow.webp" width="30" title="MLflow">
+<table><tr>
+<td><img src="app/assets/public/icons/antigravity.webp" width="30" title="Antigravity"></td>
+<td><img src="app/assets/public/icons/manus.webp" width="30" title="Manus"></td>
+<td><img src="app/assets/public/icons/mcp.webp" width="30" title="MCP"></td>
+<td><img src="app/assets/public/icons/openclaw.webp" width="30" title="OpenClaw"></td>
+<td><img src="app/assets/public/icons/langgraph.webp" width="30" title="LangGraph"></td>
+<td><img src="app/assets/public/icons/mlflow.webp" width="30" title="MLflow"></td>
+</tr></table>
 
 #### Score Range of Each Tool
 
