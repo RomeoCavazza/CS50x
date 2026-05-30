@@ -65,7 +65,11 @@ At the end of the evaluation, the system delivers an immediate analytical restit
 
 ### Distribution of AI Tools by Score
 
-The 40 tools in the catalog are each assigned to a score range `[min, max]`. The recommendation algorithm selects the 9 most relevant tools for the obtained score. The tools are distributed across 5 major maturity levels:
+The 40 tools in the catalog are each assigned to a score range `[min, max]`. The recommendation algorithm selects the 9 most relevant tools for the obtained score. 
+
+> **Disclaimer**: *Please note that this catalog and its classification are neither absolute nor exhaustive. The selection of tools and their assignment to specific maturity levels reflect a curated, somewhat arbitrary categorization designed specifically for the scope and educational purpose of this diagnostic.*
+
+The tools are distributed across 5 major maturity levels:
 
 **1. Novice**
 
