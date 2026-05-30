@@ -37,12 +37,7 @@ At the end of the 20-question evaluation, the system classifies the user into on
 └── README.md
 ```
 
-- **`app/index.html`**: Main HTML document that serves the entire Single Page Application (SPA) and loads the Alpine.js frontend framework.
-- **`app/assets/js/app.js`**: Core JavaScript logic responsible for handling user interactions, computing state and scores, generating dynamic charts (Radar and Bar charts), and executing the client-side PDF export feature.
-- **`app/assets/css/` & `public/`**: Directories containing stylesheets for the responsive UI design, as well as images and media icons used for the tool recommendations.
-- **`api/` (Serverless Functions)**: Python scripts (`stats.py` and `submit.py`) deployed on Vercel. They securely communicate with the Supabase database via its native REST API to handle anonymous form submissions and retrieve global averages.
-- **`local_server.py`**: A lightweight local HTTP server written in Python, designed to simulate Vercel's routing environment for easy local testing.
-- **`vercel.json` & `README.md`**: Project configuration for cloud deployment and the comprehensive documentation you are currently reading.
+
 
 ## Main Features
 
