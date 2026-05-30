@@ -1,3 +1,14 @@
+<!--
+  ========================================================================
+  MAIN ENTRY POINT - AI MATURITY DIAGNOSTIC
+  ========================================================================
+  This single page application uses the Alpine.js framework.
+  
+  Key concepts:
+  - x-data="diagnosticIA()" : Initializes global state and functions (logic in app.js).
+  - x-show="step === '...'" : Manages navigation between intro, questions, and results without reloading the page.
+  - x-bind (:) and x-on (@) : Dynamically binds DOM data to Javascript variables.
+-->
 <!doctype html>
 <html lang="en">
 
@@ -6,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Maturity Diagnostic | Digital Acculturation</title>
   <meta name="description"
-    content="Assess your generative AI maturity level in under 2 minutes. Get your score, profile, and growth priorities." />
+    content="Evaluate your maturity level in generative artificial intelligence in under 2 minutes. Get your score, your profile, and your areas for improvement." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -17,7 +28,7 @@
 </head>
 
 <body>
-  <main id="an-diagnostic" x-data="aiMaturityDiagnostic()" x-init="init()">
+  <main id="an-diagnostic" x-data="diagnosticIA()" x-init="init()">
     <section class="an-panel an-hero an-hero-fx an-fade-in" x-show="step === 'intro'">
       <div class="an-hero-bg-icons" aria-hidden="true">
         <div class="an-hero-float an-hero-float--1" data-float-icon>
@@ -100,7 +111,7 @@
         </p>
         <div class="an-actions an-hero-actions">
           <button class="an-btn an-btn-primary an-hero-cta" type="button" @click="start()">
-            Start my assessment
+            Start my diagnostic
           </button>
         </div>
       </div>
@@ -116,28 +127,28 @@
 
       <h2 class="an-card-title" x-text="currentCategory.title"></h2>
 
-      <!-- Grid legend at the top -->
+      <!-- Evaluation grid header (Checkbox legend) -->
       <div class="an-checklist-legend">
-        <div></div> <!-- Spacer to align options on the right -->
+        <div></div> <!-- Empty "Spacer" element used to push "Partial" and "Acquired" labels to the right via CSS Grid -->
         <div class="an-legend-options">
           <span>Partial</span>
-          <span>Achieved</span>
+          <span>Acquired</span>
         </div>
       </div>
 
-      <div class="an-checklist" role="group" aria-label="Questions in the current category">
+      <div class="an-checklist" role="group" aria-label="Questions of the current category">
         <template x-for="q in currentQuestions" :key="q.id">
           <div class="an-checklist-row">
             <span class="an-checklist-label" x-text="q.label"></span>
             <div class="an-checklist-options">
-              <!-- Partially achieved (0.5) -->
-              <label class="an-mini-box" :class="{ 'active-box': answers[q.id] === 0.5 }" :aria-label="`Partially achieved - ${q.label}`">
+              <!-- Center button: Skill being acquired (0.5 point) -->
+              <label class="an-mini-box" :class="{ 'active-box': answers[q.id] === 0.5 }" :aria-label="`Partially acquired - ${q.label}`">
                 <input type="checkbox" :checked="answers[q.id] === 0.5"
                   @change="answers[q.id] = $event.target.checked ? 0.5 : 0" />
               </label>
 
-              <!-- Fully achieved (1) -->
-              <label class="an-mini-box" :class="{ 'active-box': answers[q.id] === 1 }" :aria-label="`Fully achieved - ${q.label}`">
+              <!-- Right button: Skill fully mastered (1 point) -->
+              <label class="an-mini-box" :class="{ 'active-box': answers[q.id] === 1 }" :aria-label="`Fully acquired - ${q.label}`">
                 <input type="checkbox" :checked="answers[q.id] === 1"
                   @change="answers[q.id] = $event.target.checked ? 1 : 0" />
               </label>
@@ -156,7 +167,7 @@
         </button>
 
         <button x-show="isLastCategory" type="button" class="an-btn an-btn-primary" @click="showResults()">
-          View my results
+          See my results
         </button>
       </div>
     </section>
@@ -164,16 +175,16 @@
     <section class="an-section an-results-shell an-fade-in" x-show="step === 'results'" x-cloak>
       <header class="an-panel an-card an-results-top">
         <div>
-          <h2 class="an-card-title">Your AI maturity assessment</h2>
+          <h2 class="an-card-title">Your AI maturity diagnostic</h2>
           <p class="an-results-summary an-pdf-only" x-text="pdfSummary"></p>
           <p class="an-results-meta an-pdf-only" x-text="pdfMeta"></p>
         </div>
         <div class="an-actions an-results-actions">
           <button type="button" class="an-btn an-btn-primary" @click="downloadDiagnosticPdf()">
-            Download my assessment
+            Download my diagnostic
           </button>
           <button type="button" class="an-btn an-btn-secondary" @click="reset()">
-            Start over
+            Restart
           </button>
         </div>
       </header>
@@ -181,7 +192,7 @@
       <div class="an-bento-grid">
         <article class="an-card an-bento-card an-bento-bars">
           <div class="an-bento-head">
-            <h3 class="an-bento-title">Progress by criterion</h3>
+            <h3 class="an-bento-title">Maturity by criterion</h3>
           </div>
           <div class="an-bars an-bars-tight">
             <template x-for="row in dimensionScores" :key="`bar-${row.name}`">
@@ -200,15 +211,10 @@
 
         <article class="an-card an-bento-card an-bento-radar">
           <div class="an-bento-head">
-            <h3 class="an-bento-title">Dimension radar</h3>
+            <h3 class="an-bento-title">Dimensions radar</h3>
           </div>
-          <svg class="an-radar-svg" viewBox="-30 0 320 260" role="img" aria-label="Dimension breakdown">
-            <defs>
-              <linearGradient id="an-radar-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="rgba(29, 86, 216, 0.28)" />
-                <stop offset="100%" stop-color="rgba(29, 156, 204, 0.16)" />
-              </linearGradient>
-            </defs>
+          <svg class="an-radar-svg" viewBox="-30 0 320 260" role="img" aria-label="Dimensions distribution">
+
             <template xmlns="http://www.w3.org/1999/xhtml" x-for="ring in radarChart.rings" :key="`ring-${ring.scale}`">
               <polygon class="an-radar-ring" :points="ring.points"></polygon>
             </template>
@@ -217,9 +223,8 @@
               </line>
             </template>
             <polygon class="an-radar-shape" :points="radarChart.shape"></polygon>
-            <template xmlns="http://www.w3.org/1999/xhtml" x-for="axis in radarChart.axes" :key="`dot-${axis.key}`">
-              <circle class="an-radar-dot" :cx="axis.scoreX" :cy="axis.scoreY" r="3.25"></circle>
-            </template>
+            <polygon class="an-radar-avg-shape" x-show="radarChart.avgShape" :points="radarChart.avgShape || ''" x-cloak></polygon>
+
             <template xmlns="http://www.w3.org/1999/xhtml" x-for="axis in radarChart.axes" :key="`label-${axis.key}`">
               <text class="an-radar-label" :x="axis.labelX" :y="axis.labelY" x-text="axis.shortLabel"></text>
             </template>
@@ -228,12 +233,13 @@
 
         <article class="an-card an-bento-card an-bento-score">
           <div class="an-bento-head">
-            <h3 class="an-bento-title">Overall score</h3>
+            <h3 class="an-bento-title">Global score</h3>
           </div>
           <div class="an-score-ring" :style="scoreRingStyle" role="img" :aria-label="scoreAriaLabel">
             <span x-text="scoreTotal"></span>
             <small>/20</small>
           </div>
+          <p class="an-avg-score" x-show="avgScoreLabel" x-text="avgScoreLabel" x-cloak></p>
           <div class="an-score-meta">
             <strong>
               <span x-text="currentLevel ? currentLevel.level : ''"></span>
@@ -263,22 +269,23 @@
 
         <article class="an-card an-bento-card an-bento-line">
           <div class="an-bento-head">
-            <h3 class="an-bento-title">Maturity by stage</h3>
+            <h3 class="an-bento-title">Maturity compared to average</h3>
           </div>
-          <svg class="an-line-svg" viewBox="0 0 500 180" role="img" aria-label="Progress by category">
-            <defs>
-              <linearGradient id="an-line-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="rgba(29, 86, 216, 0.22)" />
-                <stop offset="100%" stop-color="rgba(29, 86, 216, 0.0)" />
-              </linearGradient>
-            </defs>
-            <path class="an-line-area" :d="trajectoryChart.area"></path>
-            <path class="an-line-path" :d="trajectoryChart.line"></path>
-            <template xmlns="http://www.w3.org/1999/xhtml" x-for="point in trajectoryChart.points"
-              :key="`point-${point.key}`">
+          <svg class="an-bar-chart-svg" viewBox="0 0 500 180" role="img" aria-label="Maturity compared to average">
+
+            <template xmlns="http://www.w3.org/1999/xhtml" x-for="avgBar in barChart.avgBars"
+              :key="`avg-${avgBar.key}`">
               <g>
-                <circle class="an-line-dot" :cx="point.x" :cy="point.y" r="4"></circle>
-                <text class="an-line-label" :x="point.x" y="166" x-text="point.shortLabel"></text>
+                <rect class="an-barchart-avg-rect" :x="avgBar.x" :y="avgBar.y" :width="avgBar.width" :height="avgBar.height" rx="3"></rect>
+                <text class="an-barchart-avg-value" :x="avgBar.valueX" :y="avgBar.y - 6" x-text="`${avgBar.percent}%`"></text>
+              </g>
+            </template>
+            <template xmlns="http://www.w3.org/1999/xhtml" x-for="bar in barChart.bars"
+              :key="`barchart-${bar.key}`">
+              <g>
+                <rect class="an-barchart-rect" :x="bar.x" :y="bar.y" :width="bar.width" :height="bar.height" rx="3"></rect>
+                <text class="an-barchart-value" :x="bar.valueX" :y="bar.y - 6" x-text="`${bar.percent}%`"></text>
+                <text class="an-barchart-label" :x="bar.labelX" :y="bar.labelY" x-text="bar.shortLabel"></text>
               </g>
             </template>
           </svg>
@@ -293,7 +300,7 @@
               <a :href="tool.url" target="_blank" rel="noopener noreferrer" class="an-tool-pill">
                 <span class="an-tool-icon">
                   <template x-if="tool.iconUrl">
-                    <img :src="tool.iconUrl" :alt="`Logo of ${tool.name}`" loading="lazy" />
+                    <img :src="tool.iconUrl" :alt="`Logo ${tool.name}`" loading="lazy" />
                   </template>
                   <template x-if="!tool.iconUrl">
                     <span class="an-tool-fallback" x-text="tool.fallback"></span>

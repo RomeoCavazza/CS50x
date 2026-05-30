@@ -1,4 +1,5 @@
-// Bulletproof Polyfill for Alpine.js x-for template rendering in SVG elements (Firefox/Safari/Chrome namespace fix)
+// Robust polyfill to fix a bug of Alpine.js with <template> elements inside SVGs.
+// Without this, the x-for directive fails silently on Firefox and Safari due to SVG namespace conflicts.
 if (typeof document !== 'undefined') {
   const setupSvgTemplates = () => {
     document.querySelectorAll('svg template').forEach(template => {
@@ -14,19 +15,19 @@ if (typeof document !== 'undefined') {
       }
     });
   };
-  // Run immediately (since app.js is at the bottom of the body, elements are already parsed)
+  // Immediate execution: the script being loaded at the end of the page, SVG elements are already parsed.
   setupSvgTemplates();
-  // Also run on DOMContentLoaded just in case
+  // Additional security: re-execute on full load in case SVGs are injected later.
   document.addEventListener('DOMContentLoaded', setupSvgTemplates);
 }
 
 (function () {
   const DIMENSIONS = [
     { name: "Knowledge", max: 5 },
-    { name: "Hands-on", max: 4 },
-    { name: "Usage", max: 5 },
-    { name: "Advanced Usage", max: 3 },
-    { name: "Expert Usage", max: 3 }
+    { name: "Familiarization", max: 4 },
+    { name: "Uses", max: 5 },
+    { name: "Advanced Uses", max: 3 },
+    { name: "Expert Uses", max: 3 }
   ];
 
   const QUESTIONS = [
@@ -34,140 +35,140 @@ if (typeof document !== 'undefined') {
       id: "Q01",
       category: "knowledge",
       dimension: "Knowledge",
-      label: "I understand what AI is and how it works.",
+      label: "I know what AI is and how it works.",
       points: 1
     },
     {
       id: "Q02",
       category: "knowledge",
       dimension: "Knowledge",
-      label: "I understand how AI can help in my daily life.",
+      label: "I know what AI can be used for in my daily life.",
       points: 1
     },
     {
       id: "Q03",
       category: "knowledge",
       dimension: "Knowledge",
-      label: "I know AI can produce incorrect answers, so I verify the output.",
+      label: "I know that AI can give false answers, so I verify.",
       points: 1
     },
     {
       id: "Q04",
       category: "knowledge",
       dimension: "Knowledge",
-      label: "I understand AI-related legal frameworks, including GDPR and the AI Act.",
+      label: "I know the legal frameworks related to AI, notably GDPR and the AI Act.",
       points: 1
     },
     {
       id: "Q05",
       category: "knowledge",
       dimension: "Knowledge",
-      label: "I understand how a generative model is built, for example through pre-training.",
+      label: "I know how a generative model is created, for example via pre-training.",
       points: 1
     },
     {
       id: "Q06",
-      category: "hands_on",
-      dimension: "Hands-on",
-      label: "I have already used an AI chatbot or assistant, such as ChatGPT, Gemini, or Copilot.",
+      category: "familiarization",
+      dimension: "Familiarization",
+      label: "I have already used a chatbot or AI assistant, for example ChatGPT, Gemini, or Copilot.",
       points: 1
     },
     {
       id: "Q07",
-      category: "hands_on",
-      dimension: "Hands-on",
-      label: "I have created my own account on an AI tool, such as ChatGPT, Gemini, or Claude.",
+      category: "familiarization",
+      dimension: "Familiarization",
+      label: "I have created my own account on an AI tool, for example ChatGPT, Gemini, or Claude.",
       points: 1
     },
     {
       id: "Q08",
-      category: "hands_on",
-      dimension: "Hands-on",
-      label: "I have tested multiple chatbots and can distinguish their strengths.",
+      category: "familiarization",
+      dimension: "Familiarization",
+      label: "I have tested several chatbots and I know how to differentiate them.",
       points: 1
     },
     {
       id: "Q09",
-      category: "hands_on",
-      dimension: "Hands-on",
-      label: "I can assess an AI response and rephrase my prompt.",
+      category: "familiarization",
+      dimension: "Familiarization",
+      label: "I know how to evaluate an AI response and rephrase my request.",
       points: 1
     },
     {
       id: "Q10",
-      category: "usage",
-      dimension: "Usage",
-      label: "I use AI to draft or improve written content.",
+      category: "uses",
+      dimension: "Uses",
+      label: "I use AI to write or improve texts.",
       points: 1
     },
     {
       id: "Q11",
-      category: "usage",
-      dimension: "Usage",
-      label: "I use AI to create or edit images.",
+      category: "uses",
+      dimension: "Uses",
+      label: "I use AI to create or modify images.",
       points: 1
     },
     {
       id: "Q12",
-      category: "usage",
-      dimension: "Usage",
-      label: "I use AI to analyze documents or data, such as an Excel spreadsheet.",
+      category: "uses",
+      dimension: "Uses",
+      label: "I use AI to analyze documents or data, for example an Excel spreadsheet.",
       points: 1
     },
     {
       id: "Q13",
-      category: "usage",
-      dimension: "Usage",
-      label: "I write prompts using a framework, such as RTF, RAFT, or CRAFTI.",
+      category: "uses",
+      dimension: "Uses",
+      label: "I write prompts with a framework, for example RTF, RAFT, or CRAFTI.",
       points: 1
     },
     {
       id: "Q14",
-      category: "usage",
-      dimension: "Usage",
+      category: "uses",
+      dimension: "Uses",
       label: "I organize and reuse my best prompts.",
       points: 1
     },
     {
       id: "Q15",
-      category: "advanced_usage",
-      dimension: "Advanced Usage",
-      label: "I have a paid subscription to an AI tool, such as ChatGPT, Gemini, or Copilot.",
+      category: "advanced_uses",
+      dimension: "Advanced Uses",
+      label: "I have a paid subscription to an AI tool, for example ChatGPT, Gemini, or Copilot.",
       points: 1
     },
     {
       id: "Q16",
-      category: "advanced_usage",
-      dimension: "Advanced Usage",
-      label: "I have built my own chatbot, such as a Custom GPT or a Gem.",
+      category: "advanced_uses",
+      dimension: "Advanced Uses",
+      label: "I have created my own chatbot, for example a Custom GPT or a Gem.",
       points: 1
     },
     {
       id: "Q17",
-      category: "advanced_usage",
-      dimension: "Advanced Usage",
-      label: "I have installed AI software on my computer, such as Ollama.",
+      category: "advanced_uses",
+      dimension: "Advanced Uses",
+      label: "I have installed an AI software on my computer, for example Ollama.",
       points: 1
     },
     {
       id: "Q18",
-      category: "expert_usage",
-      dimension: "Expert Usage",
-      label: "I use AI to write or debug code, for example with Codex, Copilot, or Cursor.",
+      category: "expert_uses",
+      dimension: "Expert Uses",
+      label: "I use AI to code or fix code, for example with Codex, Copilot, or Cursor.",
       points: 1
     },
     {
       id: "Q19",
-      category: "expert_usage",
-      dimension: "Expert Usage",
-      label: "I have built an agent to automate simple tasks.",
+      category: "expert_uses",
+      dimension: "Expert Uses",
+      label: "I have created an agent to automate simple tasks.",
       points: 1
     },
     {
       id: "Q20",
-      category: "expert_usage",
-      dimension: "Expert Usage",
-      label: "I have built an agent connected to APIs or external services.",
+      category: "expert_uses",
+      dimension: "Expert Uses",
+      label: "I have created an agent connected to APIs or external services.",
       points: 1
     }
   ];
@@ -176,37 +177,37 @@ if (typeof document !== 'undefined') {
     {
       key: "knowledge",
       shortTitle: "Knowledge",
-      title: "Understand AI fundamentals",
+      title: "Understand the basics of AI",
       description:
-        "General understanding of AI, its practical use cases, its limits, and its regulatory context."
+        "General understanding of AI, its practical applications, its limitations, and its regulatory framework."
     },
     {
-      key: "hands_on",
-      shortTitle: "Hands-on",
-      title: "Get comfortable with tools",
+      key: "familiarization",
+      shortTitle: "Familiarization",
+      title: "Navigating the tools",
       description:
-        "Familiarity with chatbots and the ability to test, compare, and refine your prompts."
+        "Familiarity with chatbots and ability to test, compare, and refine your prompts."
     },
     {
-      key: "usage",
-      shortTitle: "Usage",
-      title: "Use AI in day-to-day work",
+      key: "uses",
+      shortTitle: "Uses",
+      title: "Using AI daily",
       description:
-        "Concrete daily usage: content drafting, image generation, document analysis, and prompt structuring."
+        "Concrete daily uses: content writing, image generation, document analysis, and prompt structuring."
     },
     {
-      key: "advanced_usage",
-      shortTitle: "Advanced Usage",
-      title: "Customize your AI environment",
+      key: "advanced_uses",
+      shortTitle: "Advanced Uses",
+      title: "Personalizing your AI environment",
       description:
-        "Autonomy level: use of Pro subscriptions, custom chatbots, or locally installed tools."
+        "Level of autonomy: using Pro subscriptions, custom chatbots, or locally installed tools."
     },
     {
-      key: "expert_usage",
-      shortTitle: "Expert Usage",
-      title: "Automate and connect AI",
+      key: "expert_uses",
+      shortTitle: "Expert Uses",
+      title: "Automating and connecting AI",
       description:
-        "Advanced technical usage: assisted development, autonomous agents, and API connections to third-party services."
+        "Advanced and technical uses: assisted development, autonomous agents, and API connections to third-party services."
     }
   ];
 
@@ -215,18 +216,18 @@ if (typeof document !== 'undefined') {
       min: 0,
       max: 2,
       level: "Novice",
-      profile: "AI Explorer",
+      profile: "AI Discoverer",
       summary:
-        "You are at the beginning of your AI journey. This is the ideal moment to explore a field that can transform how you work.",
+        "You are starting your AI discovery, it's the perfect time to explore a field that will transform the way you work.",
       priorities: [
-        "Test three simple use cases: rewrite a message, summarize a document, and generate ideas.",
-        "Verify every response against a reliable source.",
-        "Keep effective prompts in a dedicated note."
+        "Test three simple uses: rephrase a message, summarize a document, generate ideas.",
+        "Verify each answer with a reliable source.",
+        "Keep effective prompts in a note."
       ],
-      caution: "Do not confuse response speed with information reliability.",
+      vigilance: "Do not confuse response speed with information reliability.",
 
       nextStep:
-        "Create your account on an AI tool and complete a first end-to-end mini exercise in 15 minutes."
+        "Create your account on an AI tool and complete a first full mini-exercise in 15 minutes."
     },
     {
       min: 3,
@@ -234,16 +235,16 @@ if (typeof document !== 'undefined') {
       level: "Beginner",
       profile: "Assisted User",
       summary:
-        "You have taken your first steps and are starting to see AI's potential. The next move is consistent practice.",
+        "You have taken the first steps and are starting to perceive the potential of AI, all you have to do is put it into regular practice.",
       priorities: [
-        "Compare two AI tools using the same instruction.",
-        "Specify context, objective, and expected output format.",
+        "Compare two AI tools on the same instruction.",
+        "Specify the context, objective, and expected format.",
         "Use AI on a weekly task and measure the time saved."
       ],
-      caution: "Avoid one-off experimentation without a method.",
+      vigilance: "Avoid staying in one-off experimentation without a method.",
 
       nextStep:
-        "Choose one recurring study task and use AI to handle it weekly for one month."
+        "Choose a recurring task from your studies and use AI to process it every week for a month."
     },
     {
       min: 6,
@@ -251,13 +252,13 @@ if (typeof document !== 'undefined') {
       level: "Intermediate",
       profile: "Augmented Operator",
       summary:
-        "You already use AI regularly and master the essentials to create real value in your professional activities.",
+        "You already use AI daily and master the essential basics to get a real benefit in your professional activities.",
       priorities: [
         "Write structured prompts: context, role, expected deliverable.",
         "Build a prompt library for your work.",
         "Apply a simple rule to protect sensitive data."
       ],
-      caution: "Without systematization, your gains remain limited and hard to reproduce.",
+      vigilance: "Without capitalization, your gains remain limited and difficult to reproduce.",
 
       nextStep:
         "Build a library of 10 reliable prompts for your main academic use cases."
@@ -268,16 +269,16 @@ if (typeof document !== 'undefined') {
       level: "Advanced",
       profile: "AI Architect",
       summary:
-        "You have strong mastery of generative AI tools and use cases, and you can support and inspire your peers.",
+        "You have a solid mastery of generative AI tools and uses, and you are able to support and inspire your colleagues.",
       priorities: [
-        "Automate one repetitive weekly task.",
-        "Validate time savings on 2 to 3 real cases.",
-        "Share your method with a peer, then improve it."
+        "Automate a repetitive task in your week.",
+        "Verify the time saved on 2 to 3 real cases.",
+        "Share your method with a classmate, then improve it."
       ],
-      caution: "Keep clear human oversight for every automation you deploy.",
+      vigilance: "Keep a clear human supervision on each automation put in place.",
 
       nextStep:
-        "Build a mini-agent connected to a simple tool (Notion, Google Sheets, or Gmail) for a concrete use case."
+        "Create a mini-agent connected to a simple tool (Notion, Google Sheets, or Gmail) for a concrete use."
     },
     {
       min: 16,
@@ -285,31 +286,31 @@ if (typeof document !== 'undefined') {
       level: "Expert",
       profile: "AI Strategist",
       summary:
-        "You are among the most advanced users, able to design tailored AI solutions and anticipate upcoming shifts.",
+        "You are among the most experienced users, capable of designing custom AI solutions and anticipating future developments.",
       priorities: [
-        "Design a full workflow, from data collection to final deliverable.",
-        "Define three criteria to evaluate your agent's outputs.",
-        "Document your method so others can reuse it."
+        "Design a complete workflow, from collection to final deliverable.",
+        "Define three criteria to evaluate the agent's results.",
+        "Document your method so it can be reused."
       ],
-      caution: "Actively manage compliance, tool dependency, and output-quality risks.",
+      vigilance: "Manage the risks of compliance, tool dependency, and output quality.",
 
       nextStep:
         "Prototype an agent connected to an external service and test it on a real scenario, from brief to final result."
     }
   ];
 
-  // Granular tool ranges: each tool has its own [min, max] score window.
-  // At any given score, we display the 9 most relevant tools whose range
-  // includes that score, sorted by centrality (how close the score is to
-  // the tool's range center).
+  // Dynamic display system for AI tools based on the user's global score :
+  // Each tool has an eligibility window [min, max].
+  // At the end of the test, the algorithm filters and selects les 9 outils les plus pertinents pour le score obtenu.
+  // The choice is made by 'centrality' : the closer the user's score is to the middle of the tool's range, the more this tool will be pushed as a priority.
   const TOOL_RANGES = [
-    // --- Universal companions (available at almost every level) ---
+    // --- Universal companions (present at all or almost all levels) ---
     { name: "ChatGPT",         min: 0,    max: 20, companion: true },
     { name: "Claude",           min: 0,    max: 20, companion: true },
     { name: "Gemini",           min: 0,    max: 20 },
     { name: "Perplexity",       min: 0,    max: 18 },
 
-    // --- Entry-level tools (fade out after fundamentals) ---
+    // --- Entry tools (disappear when going beyond basics) ---
     { name: "Microsoft Copilot", min: 0,   max: 8 },
     { name: "Google Workspace",  min: 0,   max: 7 },
     { name: "NotebookLM",        min: 0.5, max: 12 },
@@ -319,7 +320,7 @@ if (typeof document !== 'undefined') {
     { name: "Canva",            min: 2,    max: 12 },
     { name: "Gamma",            min: 2,    max: 11 },
 
-    // --- Alternative models (LLM comparison) ---
+    // --- Alternative models (LLMs comparison) ---
     { name: "Grok",             min: 4,    max: 13 },
     { name: "Mistral",          min: 4,    max: 16 },
     { name: "DeepSeek",         min: 5,    max: 16 },
@@ -332,11 +333,11 @@ if (typeof document !== 'undefined') {
     { name: "Apify",            min: 7,    max: 15 },
     { name: "n8n",              min: 8,    max: 17 },
 
-    // --- Model and data exploration ---
+    // --- Models and data exploration ---
     { name: "Hugging Face",     min: 7,    max: 18 },
     { name: "Kaggle",            min: 8,    max: 17 },
 
-    // --- Coding with AI (accessible -> advanced) ---
+    // --- Coding with AI (accessible → advanced) ---
     { name: "Replit",           min: 5,    max: 12 },
     { name: "v0",               min: 5,    max: 13 },
     { name: "Lovable",          min: 6,    max: 16 },
@@ -349,7 +350,7 @@ if (typeof document !== 'undefined') {
     { name: "Flowise",          min: 11,   max: 17 },
     { name: "Windmill",         min: 13,   max: 18 },
 
-    // --- Expert: IDEs, autonomous agents, frameworks ---
+    // --- Expert: IDE, autonomous agents, frameworks ---
     { name: "GitHub Copilot",   min: 11,   max: 20 },
     { name: "Cursor",           min: 12,   max: 20 },
     { name: "Claude Code",      min: 14,   max: 20 },
@@ -363,7 +364,7 @@ if (typeof document !== 'undefined') {
   ];
 
   const TOOL_ICON_RULES = [
-    // --- Beginner & Intermediate level (mainstream and productivity tools) ---
+    // --- Beginner & Intermediate Level (Consumer and productivity tools) ---
     { pattern: /(chatgpt|openai|custom gpt|gpt)/i, slug: "chatgpt" },
     { pattern: /(gemini|gems?)/i, slug: "gemini" },
     { pattern: /google workspace/i, slug: "googleworkspace" },
@@ -375,7 +376,7 @@ if (typeof document !== 'undefined') {
     { pattern: /hugging\s*face/i, slug: "huggingface" },
     { pattern: /kaggle/i, slug: "kaggle" },
 
-    // --- Advanced level (automation, no-code, and alternative models) ---
+    // --- Advanced Level (Automation, No-code and Alternative models) ---
     { pattern: /make/i, slug: "make" },
     { pattern: /zapier/i, slug: "zapier" },
     { pattern: /ollama/i, slug: "ollama" },
@@ -391,13 +392,13 @@ if (typeof document !== 'undefined') {
     { pattern: /dify/i, slug: "dify" },
     { pattern: /lm\s*studio/i, slug: "lmstudio" },
 
-    // --- Expert level (development, frameworks, and autonomous agents) ---
+    // --- Expert Level (Development, Frameworks and Autonomous Agents) ---
     { pattern: /v0/i, slug: "v0" },
     { pattern: /replit/i, slug: "replit" },
-    { pattern: /github\s*copilot/i, slug: "githubcopilot" }, // IMPORTANT: before "copilot"
+    { pattern: /github\s*copilot/i, slug: "githubcopilot" }, // IMPORTANT : avant "copilot"
     { pattern: /copilot/i, slug: "copilot" },
     { pattern: /cursor/i, slug: "cursor" },
-    { pattern: /claude\s*code/i, slug: "claudecode" }, // IMPORTANT: before "claude"
+    { pattern: /claude\s*code/i, slug: "claudecode" }, // IMPORTANT : avant "claude"
     { pattern: /claude/i, slug: "claude" },
     { pattern: /lovable/i, slug: "lovable" },
     { pattern: /manus/i, slug: "manus" },
@@ -468,10 +469,10 @@ if (typeof document !== 'undefined') {
   function shortDimensionLabel(name) {
     const labels = {
       "Knowledge": "Knowledge",
-      "Hands-on": "Hands-on",
-      "Usage": "Usage",
-      "Advanced Usage": "Advanced",
-      "Expert Usage": "Expert"
+      "Familiarization": "Familiarization",
+      "Uses": "Uses",
+      "Advanced Uses": "Advanced Uses",
+      "Expert Uses": "Expert Uses"
     };
 
     return labels[name] || name;
@@ -502,7 +503,7 @@ if (typeof document !== 'undefined') {
 
   function buildToolFallback(toolName) {
     const words = toolName
-      .replace(/[^A-Za-z0-9\s]/g, " ")
+      .replace(/[^A-Za-z0-9À-ÿ\s]/g, " ")
       .split(/\s+/)
       .filter(Boolean);
 
@@ -631,7 +632,7 @@ if (typeof document !== 'undefined') {
     initFloatingHero();
   }
 
-  window.aiMaturityDiagnostic = function aiMaturityDiagnostic() {
+  window.diagnosticIA = function diagnosticIA() {
     return {
       step: "intro",
       categories: CATEGORIES,
@@ -640,6 +641,8 @@ if (typeof document !== 'undefined') {
       levels: LEVELS,
       answers: {},
       currentCategoryIndex: 0,
+      avgScore: null,
+      avgDimensions: null,
 
       init() {
         this.answers = normalizeScoreMap(this.questions.map((q) => q.id));
@@ -702,7 +705,7 @@ if (typeof document !== 'undefined') {
       },
 
       get scoreAriaLabel() {
-        return `Overall score ${this.scoreTotal} out of ${this.questions.length}`;
+        return `Score global ${this.scoreTotal} sur ${this.questions.length}`;
       },
 
       get categoryScores() {
@@ -725,38 +728,66 @@ if (typeof document !== 'undefined') {
         });
       },
 
-      get trajectoryChart() {
+      get barChart() {
         const width = 500;
         const height = 180;
-        const paddingX = 65;
-        const baseY = 136;
-        const amplitude = 88;
+        const paddingX = 35;
+        const topPad = 24;
+        const bottomPad = 28;
+        const barAreaHeight = height - topPad - bottomPad;
         const categories = this.categoryScores;
-        const stepX = categories.length > 1 ? (width - paddingX * 2) / (categories.length - 1) : 0;
+        const count = categories.length || 1;
+        const gap = 16;
+        const barAreaWidth = width - paddingX * 2;
+        const totalGaps = (count - 1) * gap;
+        const groupWidth = (barAreaWidth - totalGaps) / count;
 
-        const points = categories.map((category, index) => {
-          const x = paddingX + index * stepX;
-          const y = baseY - (amplitude * category.percent) / 100;
+        const hasAvg = !!this.avgDimensions;
+        const subGap = hasAvg ? 4 : 0;
+        const barWidth = hasAvg ? (groupWidth - subGap) / 2 : groupWidth;
+
+        const bars = categories.map((category, index) => {
+          const groupX = paddingX + index * (groupWidth + gap);
+          const x = groupX;
+          const barHeight = (barAreaHeight * category.percent) / 100;
+          const y = topPad + barAreaHeight - barHeight;
           return {
             key: category.key,
             shortLabel: category.shortLabel,
             x: Number(x.toFixed(2)),
-            y: Number(y.toFixed(2))
+            y: Number(y.toFixed(2)),
+            width: Number(barWidth.toFixed(2)),
+            height: Number(Math.max(2, barHeight).toFixed(2)),
+            labelX: Number((groupX + groupWidth / 2).toFixed(2)),
+            valueX: Number((x + barWidth / 2).toFixed(2)),
+            labelY: height - 6,
+            percent: category.percent
           };
         });
 
-        const line = points
-          .map((point, index) => `${index === 0 ? "M" : "L"}${point.x} ${point.y}`)
-          .join(" ");
+        let avgBars = [];
+        if (hasAvg) {
+          const dimNames = ["Knowledge", "Familiarization", "Uses", "Advanced Uses", "Expert Uses"];
+          avgBars = dimNames.map((dimName, index) => {
+            const groupX = paddingX + index * (groupWidth + gap);
+            const x = groupX + barWidth + subGap;
+            const avgData = this.avgDimensions[dimName];
+            const avgPercent = avgData ? avgData.percent : 0;
+            const bh = (barAreaHeight * avgPercent) / 100;
+            const y = topPad + barAreaHeight - bh;
+            return {
+              key: `avg-${dimName}`,
+              x: Number(x.toFixed(2)),
+              y: Number(y.toFixed(2)),
+              width: Number(barWidth.toFixed(2)),
+              height: Number(Math.max(2, bh).toFixed(2)),
+              valueX: Number((x + barWidth / 2).toFixed(2)),
+              percent: avgPercent
+            };
+          });
+        }
 
-        const lastX = points.length ? points[points.length - 1].x : paddingX;
-        const area = `${line} L${lastX} ${baseY} L${paddingX} ${baseY} Z`;
-
-        return {
-          points,
-          line,
-          area
-        };
+        return { bars, avgBars, baseY: topPad + barAreaHeight };
       },
 
       get radarChart() {
@@ -807,11 +838,22 @@ if (typeof document !== 'undefined') {
 
         const shape = axes.map((axis) => `${axis.scoreX},${axis.scoreY}`).join(" ");
 
+        let avgShape = null;
+        if (this.avgDimensions) {
+          avgShape = rows.map((row, index) => {
+            const avgData = this.avgDimensions[row.name];
+            const avgPercent = avgData ? avgData.percent : 0;
+            const p = pointAt(index, radius * (avgPercent / 100));
+            return `${p.x.toFixed(2)},${p.y.toFixed(2)}`;
+          }).join(" ");
+        }
+
         return {
           center,
           rings,
           axes,
-          shape
+          shape,
+          avgShape
         };
       },
 
@@ -819,16 +861,16 @@ if (typeof document !== 'undefined') {
         const score = this.scoreTotal;
         const maxTools = 9;
 
-        // Filter tools whose range includes the current score
+        // 1. Initial filtering: we only keep tools whose range includes the current score
         const eligible = TOOL_RANGES.filter(
           (tool) => score >= tool.min && score <= tool.max
         );
 
-        // Separate companion tools (always shown when score >= 2)
+        // 2. We separate the so-called 'Companions' tools (e.g. ChatGPT, Claude) which have a display pass
         const companions = eligible.filter((t) => t.companion);
         const others = eligible.filter((t) => !t.companion);
 
-        // Sort non-companion tools by centrality to pick the most relevant
+        // 3. Centrality sorting of classic tools: we prioritize those whose core target corresponds to the student's score
         others.sort((a, b) => {
           const centerA = (a.min + a.max) / 2;
           const halfA = (a.max - a.min) / 2 || 0.5;
@@ -841,13 +883,14 @@ if (typeof document !== 'undefined') {
           return centralityB - centralityA;
         });
 
-        // Reserve slots for companions (at score >= 2), fill the rest by centrality
+        // 4. We reserve the first places for Companions (only if score >= 2 to not overwhelm a complete beginner)
+        // and we fill the remaining slots (up to 9) with the most relevant classic tools.
         const companionSlots = (score >= 2) ? companions : [];
         const remainingSlots = maxTools - companionSlots.length;
         const selected = [...companionSlots, ...others.slice(0, remainingSlots)];
 
-        // Re-sort for display: simplest (lowest min) → hardest (highest min)
-        // If same min, the narrower range (more specialized) comes after
+        // 5. Final visual sorting: we display from the most basic (low min) to the most demanding (high min).
+        // In case of equality on the min, the tool with the narrowest range (therefore more specialized) will be displayed after.
         selected.sort((a, b) => a.min - b.min || a.max - b.max);
 
         return selected.map((tool) => ({
@@ -879,12 +922,12 @@ if (typeof document !== 'undefined') {
       },
 
       get pdfMeta() {
-        const snapshotDate = new Date().toLocaleDateString("en-GB", {
+        const snapshotDate = new Date().toLocaleDateString("en-US", {
           day: "2-digit",
           month: "2-digit",
           year: "numeric"
         });
-        return `Assessment generated on ${snapshotDate}.`;
+        return `Diagnostic generated on ${snapshotDate}.`;
       },
 
       start() {
@@ -907,12 +950,44 @@ if (typeof document !== 'undefined') {
 
       showResults() {
         this.step = "results";
+        this._submitAndFetchStats();
+      },
+
+      async _submitAndFetchStats() {
+        try {
+          await fetch("/api/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              answers: this.answers,
+              scoreTotal: this.scoreTotal
+            })
+          });
+        } catch (_) { /* server not running */ }
+
+        try {
+          const res = await fetch("/api/stats");
+          if (res.ok) {
+            const stats = await res.json();
+            if (stats.avgScore !== null) {
+              this.avgScore = stats.avgScore;
+              this.avgDimensions = stats.avgDimensions;
+            }
+          }
+        } catch (_) { /* server not running */ }
       },
 
       reset() {
         this.step = "intro";
         this.currentCategoryIndex = 0;
         this.answers = normalizeScoreMap(this.questions.map((q) => q.id));
+        this.avgScore = null;
+        this.avgDimensions = null;
+      },
+
+      get avgScoreLabel() {
+        if (this.avgScore === null) return null;
+        return `Average score: ${this.avgScore}/20`;
       },
 
       async waitForImages(element) {
@@ -969,7 +1044,7 @@ if (typeof document !== 'undefined') {
         };
 
         const svgTemplates = Array.from(
-          captureNode.querySelectorAll(".an-radar-svg template, .an-line-svg template")
+          captureNode.querySelectorAll(".an-radar-svg template, .an-bar-chart-svg template")
         );
         svgTemplates.forEach((templateNode) => {
           const placeholder = document.createComment("pdf-template-placeholder");
@@ -1015,7 +1090,7 @@ if (typeof document !== 'undefined') {
             ctx.font = `800 ${Math.round(width * 0.255)}px Roboto`;
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
-            ctx.fillText(String(this.scoreTotal), cx, cy - height * 0.045);
+            ctx.fillText(String(this.scoreTotal), cx, cy - height * 0.03);
 
             ctx.fillStyle = "#6f809f";
             ctx.font = `700 ${Math.round(width * 0.09)}px Roboto`;
@@ -1118,17 +1193,26 @@ if (typeof document !== 'undefined') {
 
             const shapePoints = axes.map((axis) => ({ x: axis.scoreX, y: axis.scoreY }));
             drawPolygon(shapePoints, {
-              fill: "rgba(29, 86, 216, 0.24)",
+              fill: "rgba(29, 86, 216, 0.28)",
               stroke: "#1d56d8",
               lineWidth: 1.6
             });
 
+            if (radar.avgShape) {
+              const avgPoints = radar.avgShape.split(" ").map(pt => {
+                const coords = pt.split(",");
+                return { x: parseFloat(coords[0]), y: parseFloat(coords[1]) };
+              });
+              ctx.setLineDash([5 * scale, 3 * scale]);
+              drawPolygon(avgPoints, {
+                fill: "rgba(29, 156, 204, 0.10)",
+                stroke: "#1d9ccc",
+                lineWidth: 1.4
+              });
+              ctx.setLineDash([]);
+            }
+
             axes.forEach((axis) => {
-              const dot = toCanvasPoint(axis.scoreX, axis.scoreY);
-              ctx.fillStyle = "#1d56d8";
-              ctx.beginPath();
-              ctx.arc(dot.x, dot.y, Math.max(2.5, 3 * scale), 0, Math.PI * 2);
-              ctx.fill();
 
               const label = toCanvasPoint(axis.labelX, axis.labelY);
               ctx.fillStyle = "#3e5278";
@@ -1159,87 +1243,91 @@ if (typeof document !== 'undefined') {
           }
         }
 
-        const lineSvg = captureNode.querySelector(".an-line-svg");
-        if (lineSvg) {
-          const rect = lineSvg.getBoundingClientRect();
+        const barChartSvg = captureNode.querySelector(".an-bar-chart-svg");
+        if (barChartSvg) {
+          const rect = barChartSvg.getBoundingClientRect();
           const { canvas, ctx, width, height } = createHiDpiCanvas(rect.width || 500, rect.height || 180);
-          const chart = this.trajectoryChart || { points: [] };
-          const points = Array.isArray(chart.points) ? chart.points : [];
-          let didRenderLine = false;
+          const chart = this.barChart || { bars: [], avgBars: [], baseY: 152 };
+          const bars = Array.isArray(chart.bars) ? chart.bars : [];
+          const avgBars = Array.isArray(chart.avgBars) ? chart.avgBars : [];
+          let didRenderBars = false;
 
-          if (ctx && points.length) {
-            const minX = 65;
-            const maxX = 435;
-            const minY = 48;
-            const maxY = 136;
+          if (ctx && bars.length) {
             const sx = width / 500;
             const sy = height / 180;
-            const toCanvas = (x, y) => ({ x: x * sx, y: y * sy });
 
-            const first = toCanvas(minX, maxY);
-            const last = toCanvas(maxX, maxY);
+            const drawBar = (bar, color, valueColor, borderOptions) => {
+              const bx = bar.x * sx;
+              const by = bar.y * sy;
+              const bw = bar.width * sx;
+              const bh = bar.height * sy;
 
-            ctx.beginPath();
-            points.forEach((point, index) => {
-              const p = toCanvas(point.x, point.y);
-              if (index === 0) {
-                ctx.moveTo(p.x, p.y);
-              } else {
-                ctx.lineTo(p.x, p.y);
-              }
-            });
-            ctx.lineTo(last.x, last.y);
-            ctx.lineTo(first.x, first.y);
-            ctx.closePath();
-            ctx.fillStyle = "rgba(29, 86, 216, 0.18)";
-            ctx.fill();
-
-            ctx.beginPath();
-            points.forEach((point, index) => {
-              const p = toCanvas(point.x, point.y);
-              if (index === 0) {
-                ctx.moveTo(p.x, p.y);
-              } else {
-                ctx.lineTo(p.x, p.y);
-              }
-            });
-            ctx.strokeStyle = "#1d56d8";
-            ctx.lineWidth = 2;
-            ctx.lineJoin = "round";
-            ctx.lineCap = "round";
-            ctx.stroke();
-
-            points.forEach((point) => {
-              const p = toCanvas(point.x, point.y);
-              ctx.fillStyle = "#1d56d8";
+              ctx.fillStyle = color;
+              const r = Math.min(3 * sx, bw / 2);
               ctx.beginPath();
-              ctx.arc(p.x, p.y, Math.max(2.5, 4 * Math.min(sx, sy)), 0, Math.PI * 2);
+              ctx.moveTo(bx + r, by);
+              ctx.lineTo(bx + bw - r, by);
+              ctx.quadraticCurveTo(bx + bw, by, bx + bw, by + r);
+              ctx.lineTo(bx + bw, by + bh);
+              ctx.lineTo(bx, by + bh);
+              ctx.lineTo(bx, by + r);
+              ctx.quadraticCurveTo(bx, by, bx + r, by);
+              ctx.closePath();
               ctx.fill();
 
-              const label = toCanvas(point.x, 166);
-              ctx.fillStyle = "#42567d";
-              ctx.font = `700 ${Math.max(9, Math.round(10 * Math.min(sx, sy)))}px ${pdfLabelFontFamily}`;
+              if (borderOptions) {
+                ctx.lineWidth = borderOptions.width || 1;
+                ctx.strokeStyle = borderOptions.color;
+                if (borderOptions.dash) {
+                  ctx.setLineDash(borderOptions.dash.map(d => d * Math.min(sx, sy)));
+                }
+                ctx.stroke();
+                ctx.setLineDash([]);
+              }
+
+              ctx.fillStyle = valueColor;
+              ctx.font = `800 ${Math.max(7, Math.round(8 * Math.min(sx, sy)))}px ${pdfLabelFontFamily}`;
               ctx.textAlign = "center";
-              ctx.textBaseline = "middle";
-              ctx.fillText(point.shortLabel, label.x, label.y);
+              ctx.textBaseline = "bottom";
+              ctx.fillText(`${bar.percent}%`, bar.valueX * sx, by - 3 * sy);
+            };
+
+            avgBars.forEach((bar) => {
+              drawBar(bar, "rgba(29, 156, 204, 0.15)", "#1d9ccc", {
+                color: "#1d9ccc",
+                dash: [5, 3]
+              });
             });
 
-            didRenderLine = true;
+            bars.forEach((bar) => {
+              drawBar(bar, "rgba(29, 86, 216, 0.28)", "#1646b5", {
+                color: "#1d56d8",
+                width: 1
+              });
+              
+              ctx.fillStyle = "#42567d";
+              ctx.font = `700 ${Math.max(8, Math.round(8.5 * Math.min(sx, sy)))}px ${pdfLabelFontFamily}`;
+              ctx.textAlign = "center";
+              ctx.textBaseline = "middle";
+              ctx.fillText(bar.shortLabel, bar.labelX * sx, bar.labelY * sy);
+            });
+
+            didRenderBars = true;
           }
 
-          if (didRenderLine) {
+          if (didRenderBars) {
             const replacement = document.createElement("div");
-            replacement.className = "an-pdf-canvas-fallback an-pdf-canvas-line";
+            replacement.className = "an-pdf-canvas-fallback an-pdf-canvas-barchart";
             replacement.style.width = `${canvas.style.width}`;
             replacement.style.height = `${canvas.style.height}`;
             replacement.appendChild(canvas);
 
-            const previousDisplay = lineSvg.style.display;
-            lineSvg.style.display = "none";
-            lineSvg.insertAdjacentElement("afterend", replacement);
+            const previousDisplay = barChartSvg.style.display;
+            barChartSvg.style.display = "none";
+            barChartSvg.insertAdjacentElement("afterend", replacement);
 
             cleanups.push(() => {
-              lineSvg.style.display = previousDisplay;
+              barChartSvg.style.display = previousDisplay;
               replacement.remove();
             });
           }
@@ -1277,12 +1365,13 @@ if (typeof document !== 'undefined') {
           });
         });
 
-        // Templates are runtime instructions only; rendered siblings are already in the DOM.
+        // We purge <template> tags: these are internal Alpine.js instructions qui pollueraient le rendu PDF.
         captureNode.querySelectorAll("template").forEach((templateNode) => {
           templateNode.remove();
         });
 
-        // Keep the cloned tree fully static so Alpine does not re-evaluate x-for scopes.
+        // We completely freeze the cloned DOM tree with the x-ignore attribute.
+        // Without this, Alpine.js would try to re-evaluate javascript in the phantom clone, ce qui ferait planter l'export PDF.
         captureNode.setAttribute("x-ignore", "");
       },
 
@@ -1300,13 +1389,13 @@ if (typeof document !== 'undefined') {
         }
 
         if (!this.$root) {
-          window.alert("Unable to generate the PDF.");
+          window.alert("Impossible to generate the PDF.");
           return;
         }
 
         const sourceNode = this.$root.querySelector(".an-results-shell");
         if (!sourceNode) {
-          window.alert("Unable to generate the PDF without the results screen.");
+          window.alert("Impossible to generate the PDF without the results screen.");
           return;
         }
 
@@ -1377,7 +1466,7 @@ if (typeof document !== 'undefined') {
           });
 
           if (!canvas || !canvas.width || !canvas.height) {
-            throw new Error("Invalid PDF canvas (null dimensions).");
+            throw new Error("Invalid PDF Canvas (null dimensions).");
           }
 
           const pdf = new pdfLib.jsPdfFactory({
@@ -1421,7 +1510,7 @@ if (typeof document !== 'undefined') {
           pdf.save("AI-Maturity-Diagnostic.pdf");
         } catch (error) {
           console.error("PDF export failed:", error);
-          window.alert("PDF export is currently unavailable. Reload the page and try again.");
+          window.alert("PDF export impossible for the moment. Reload the page and try again.");
         } finally {
           cleanupFallbacks();
           if (captureNode && captureNode.parentNode) {

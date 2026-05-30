@@ -233,16 +233,18 @@ Repository analysis using [cloc](https://github.com/AlDanial/cloc):
 
 | Language | Files | Blank | Comment | Code |
 | :--- | ---: | ---: | ---: | ---: |
-| CSS | 5 | 276 | 13 | 1,647 |
+| Text | 72 | 95,998 | 0 | 919,209 |
+| CSS | 5 | 281 | 41 | 1,674 |
 | C | 22 | 325 | 322 | 1,417 |
-| JavaScript | 2 | 176 | 31 | 1,267 |
-| HTML | 17 | 113 | 13 | 941 |
-| Python | 9 | 139 | 74 | 421 |
-| Markdown | 3 | 74 | 2 | 186 |
+| JavaScript | 2 | 183 | 34 | 1,346 |
+| HTML | 17 | 117 | 23 | 934 |
+| Python | 12 | 193 | 85 | 695 |
+| Markdown | 3 | 96 | 2 | 267 |
 | C/C++ Header | 5 | 28 | 58 | 92 |
 | SQL | 22 | 4 | 14 | 88 |
 | make | 3 | 6 | 5 | 19 |
-| **TOTAL** | **159** | **97,131** | **532** | **925,238** |
+| JSON | 1 | 0 | 0 | 5 |
+| **TOTAL** | **164** | **97,231** | **584** | **925,746** |
 
 The repository balances low-level system programming (C) with high-level application development (Python/Web).
 
